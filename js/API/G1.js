@@ -1,3 +1,5 @@
+import Gline from "./Gline.js";
+
 export default class G1 extends Gline {
   constructor(xyzObj) {
     super();

@@ -1,5 +1,3 @@
-import Gline from "./Gline.js";
-
 export default class GcodeAPI {
   constructor() {
     this.previusX = 0;

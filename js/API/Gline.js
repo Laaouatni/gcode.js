@@ -1,5 +1,4 @@
-import G0 from "./G0.js"
-import G1 from "./G1.js"
+import GcodeAPI from "./gcodeAPI.js"
 
 export default class Gline extends GcodeAPI {
   constructor() {
