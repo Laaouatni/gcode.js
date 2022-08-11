@@ -10,12 +10,40 @@
     hello world
     <script src="./js/script.js"></script>
 
-    <script src="./js/API/test.js" type="module"></script>
-
     <script type="module">
-      import test from "./js/API/test.js";
+      console.log(
+        new G0({
+          x: 1,
+          y: 2,
+        }).getLine(),
+      );
 
-      test();
+      console.log(
+        new G0({
+          x: 3,
+          y: 4,
+        }).getLine(),
+      );
+
+      console.log(
+        new G0({
+          x: 5,
+        }).getLine(),
+      );
+
+      console.log(
+        new G0({
+          z: 6,
+        }).getLine(),
+      );
+
+      console.log(
+        new G0({
+          x: 7,
+          y: 8,
+          z: 9,
+        }).getLine(),
+      );
     </script>
   </body>
 </html>

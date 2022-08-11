@@ -1,4 +1,10 @@
-class GcodeAPI {}
+class GcodeAPI {
+  constructor() {
+    this.previusX = 0;
+    this.previusY = 0;
+    this.previusZ = 0;
+  }
+}
 
 class Gline extends GcodeAPI {
   constructor() {
