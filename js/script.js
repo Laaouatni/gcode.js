@@ -1,29 +1,49 @@
-import G0 from "./API/G0.js"
+class GcodeAPI {
+  constructor() {
+    GcodeAPI.previusX = 0;
+    GcodeAPI.previusY = 0;
+    GcodeAPI.previusZ = 0;
+  }
 
-test();
+  setLastPosition() {
+    GcodeAPI.previusX = this.x;
+    GcodeAPI.previusY = this.y;
+    GcodeAPI.previusZ = this.z;
+  }
+}
 
-function test() {
-  console.log(new G0({
-    x: 1,
-    y: 2
-  }).getLine());
+ class Gline extends GcodeAPI {
+  constructor() {
+    super();
 
-  console.log(new G0({
-    x: 4,
-    y: 5
-  }).getLine());
+    this.prefix = `ERROR: prefix not found.`;
+    this.lineOfCode = this.getLine() ?? `ERROR: your line of code is not generated.`;
+  }
 
-  console.log(new G0({
-    x: 3
-  }).getLine());
+  getLine() {
+    this.setLastPosition();
+    return `${this.prefix} X${this.x} Y${this.y} Z${this.z}`;
+  }
+}
 
-  console.log(new G0({
-    z: 18
-  }).getLine());
+class G0 extends Gline {
+  constructor(xyzObj) {
+    super();
+    this.x = xyzObj.x ?? GcodeAPI.previusX ?? 0;
+    this.y = xyzObj.y ?? GcodeAPI.previusY ?? 0;
+    this.z = xyzObj.z ?? GcodeAPI.previusZ ?? 0;
 
-  console.log(new G0({
-    x: 8,
-    y: 20,
-    z: 30
-  }).getLine());
+    this.prefix = `G0`;
+  }
+}
+
+class G1 extends Gline {
+  constructor(xyzObj) {
+    super();
+    this.x = xyzObj.x ?? GcodeAPI.previusX ?? 0;
+    this.y = xyzObj.y ?? GcodeAPI.previusY ?? 0;
+    this.z = xyzObj.z ?? GcodeAPI.previusZ ?? 0;
+
+    this.prefix = `G1`;
+  }
 }
