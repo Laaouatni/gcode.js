@@ -1,20 +1,16 @@
 class GcodeAPI {
-  constructor() {
-    this.previusX = 0;
-    this.previusY = 0;
-    this.previusZ = 0;
-  }
 }
 
 class Gline extends GcodeAPI {
   constructor() {
     super();
-    this.lineOfCode = this.getLine();
+    this.lineOfCode = undefined;
   }
 
   getLine() {
     this.setLastPosition();
-    return `${this.prefix} X${this.x} Y${this.y} Z${this.z}`;
+    this.lineOfCode = `${this.prefix} X${this.x} Y${this.y} Z${this.z}`;
+    return this.lineOfCode;
   }
 
   setLastPosition() {
@@ -27,9 +23,9 @@ class Gline extends GcodeAPI {
 class G0 extends Gline {
   constructor(_xyzObj) {
     super();
-    this.x = _xyzObj.x ?? GcodeAPI.previusX ?? "❌";
-    this.y = _xyzObj.y ?? GcodeAPI.previusY ?? "❌";
-    this.z = _xyzObj.z ?? GcodeAPI.previusZ ?? "❌";
+    this.x = _xyzObj.x ?? GcodeAPI.previusX ?? 0;
+    this.y = _xyzObj.y ?? GcodeAPI.previusY ?? 0;
+    this.z = _xyzObj.z ?? GcodeAPI.previusZ ?? 0;
 
     this.prefix = `G0`;
   }
@@ -38,9 +34,9 @@ class G0 extends Gline {
 class G1 extends Gline {
   constructor(_xyzObj) {
     super();
-    this.x = _xyzObj.x ?? GcodeAPI.previusX ?? "❌";
-    this.y = _xyzObj.y ?? GcodeAPI.previusY ?? "❌";
-    this.z = _xyzObj.z ?? GcodeAPI.previusZ ?? "❌";
+    this.x = _xyzObj.x ?? GcodeAPI.previusX ?? 0;
+    this.y = _xyzObj.y ?? GcodeAPI.previusY ?? 0;
+    this.z = _xyzObj.z ?? GcodeAPI.previusZ ?? 0;
 
     this.prefix = `G1`;
   }
