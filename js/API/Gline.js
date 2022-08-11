@@ -12,10 +12,4 @@ export default class Gline extends GcodeAPI {
     this.setLastPosition();
     return this.lineOfCode;
   }
-
-  setLastPosition() {
-    this.previusX = this.x;
-    this.previusY = this.y;
-    this.previusZ = this.z;
-  }
 }
