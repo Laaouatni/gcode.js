@@ -1,6 +1,6 @@
-class GcodeAPI {}
+import GcodeAPI from "../Gmain/GcodeAPI.js";
 
-class Gcommands extends GcodeAPI {
+export default class Gcommands extends GcodeAPI {
   constructor(_xyzObj) {
     super();
     this.lineOfCode = "⚠️ No line of code - please use getCode() method first";
@@ -22,35 +22,3 @@ class Gcommands extends GcodeAPI {
     GcodeAPI.previusZ = this.z;
   }
 }
-
-class G0 extends Gcommands {
-  constructor(_xyzObj) {
-    super(_xyzObj);
-    this.prefix = `G0`;
-  }
-}
-
-class G1 extends Gcommands {
-  constructor(_xyzObj) {
-    super(_xyzObj);
-
-    this.prefix = `G1`;
-  }
-}
-
-class G2 extends Gcommands {
-  constructor(_xyzObj) {
-    super(_xyzObj);
-
-    this.prefix = `G2`;
-  }
-}
-
-class G3 extends Gcommands {
-  constructor(_xyzObj) {
-    super(_xyzObj);
-
-    this.prefix = `G3`;
-  }
-}
-
