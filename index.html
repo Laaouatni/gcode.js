@@ -8,27 +8,6 @@
   </head>
   <body>
     hello world
-    <!-- <script src="./js/script.js" type="module"></script> -->
-    <script src="./js/API/test.js"></script>
-
-    <script>
-      // this is correct but in the next examples is not working because I wanted to that if _obj isn't defined it get the previus one.
-      console.log(new ChildClass({ x: 1, y: 2, z: 3 }).print());
-
-      // here since z is not defined
-      // ❌ it need to be 3, but I don't know why is 0.
-      console.log(new ChildClass({ x: 4, y: 5 }).print());
-
-      // ❌ this need to be "x: 4, y: 5, z: 3" by getting the previus values with "??"
-      console.log(new ChildClass({ x: 3 }).print());
-
-      // ❌ this need to be "x:3, y:5, z:18"
-      console.log(new ChildClass({ z: 18 }).print());
-
-      // ✅ if there is all the values then is correct
-      console.log(new ChildClass({ x: 8, y: 20, z: 30 }).print());
-
-      console.log(new ChildClass({}))
-    </script>
+    <script src="./js/script.js" type="module"></script>
   </body>
 </html>

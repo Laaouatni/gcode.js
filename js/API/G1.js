@@ -1,11 +1,12 @@
 import Gline from "./Gline.js";
+import GcodeAPI from "./GcodeAPI.js";
 
 export default class G1 extends Gline {
   constructor(xyzObj) {
     super();
-    this.x = xyzObj.x ?? this.previusX;
-    this.y = xyzObj.y ?? this.previusY;
-    this.z = xyzObj.z ?? this.previusZ;
+    this.x = xyzObj.x ?? GcodeAPI.previusX ?? 0;
+    this.y = xyzObj.y ?? GcodeAPI.previusY ?? 0;
+    this.z = xyzObj.z ?? GcodeAPI.previusZ ?? 0;
 
     this.prefix = `G1`;
   }

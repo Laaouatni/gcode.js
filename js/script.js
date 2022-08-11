@@ -1,12 +1,29 @@
 import G0 from "./API/G0.js"
-import G1 from "./API/G1.js"
 
-import GcodeAPI from "./API/GcodeAPI.js"
+test();
 
-console.log(new G0({ x: 20 }));
+function test() {
+  console.log(new G0({
+    x: 1,
+    y: 2
+  }).getLine());
 
-let one = new GcodeAPI();
+  console.log(new G0({
+    x: 4,
+    y: 5
+  }).getLine());
 
-one.setLastPosition();
+  console.log(new G0({
+    x: 3
+  }).getLine());
 
-console.log(one);
+  console.log(new G0({
+    z: 18
+  }).getLine());
+
+  console.log(new G0({
+    x: 8,
+    y: 20,
+    z: 30
+  }).getLine());
+}
