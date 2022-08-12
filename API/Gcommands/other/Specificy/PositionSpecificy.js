@@ -17,16 +17,6 @@ export default class PositionSpecificy {
         return element === "top" || element === "bottom";
       });
     };
-
-    console.log({
-      x: this.choosedXDirection(),
-      y: this.choosedYDirection(),
-      z:
-        this.choosedXDirection() === undefined &&
-        this.choosedYDirection() === undefined
-          ? "zIndex"
-          : undefined,
-    });
   }
 
   getChoosedDirection() {
