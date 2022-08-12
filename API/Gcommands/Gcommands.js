@@ -26,13 +26,19 @@ export default class Gcommands extends GcodeAPI {
   moveTo(_transformObj) {
     this.toX =
       new PositionSpecificy(_transformObj).getChoosedDirection().x === "left"
-        ? this.x + new DirectionValues(_transformObj).left
-        : this.x - new DirectionValues(_transformObj).right;
+        // ? this.x + new DirectionValues(_transformObj).left
+        // : this.x - new DirectionValues(_transformObj).right;
+        ? console.log("🧪 LEFT")
+        : console.log("🧪 RIGHT");
 
     this.toY =
       new PositionSpecificy(_transformObj).getChoosedDirection().y === "bottom"
-        ? this.y + new DirectionValues(_transformObj).bottom
-        : this.y - new DirectionValues(_transformObj).top;
+        // ? this.y + new DirectionValues(_transformObj).bottom
+        // : this.y - new DirectionValues(_transformObj).top;
+        ? console.log("🧪 BOTTOM")
+      : console.log("🧪 TOP");
+
+    // console.log(new PositionSpecificy(_transformObj).getChoosedDirection().y);
 
     this.toZ = _transformObj.zIndex
       ? this.z + _transformObj.zIndex
