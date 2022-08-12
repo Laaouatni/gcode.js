@@ -21,6 +21,11 @@ export default class PositionSpecificy {
     console.log({
       x: this.choosedXDirection(),
       y: this.choosedYDirection(),
+      z:
+        this.choosedXDirection() === undefined &&
+        this.choosedYDirection() === undefined
+          ? "zIndex"
+          : undefined,
     });
   }
 
@@ -28,6 +33,11 @@ export default class PositionSpecificy {
     return {
       x: this.choosedXDirection(),
       y: this.choosedYDirection(),
+      z:
+        this.choosedXDirection() === undefined &&
+        this.choosedYDirection() === undefined
+          ? "zIndex"
+          : undefined,
     };
   }
 }
