@@ -45,5 +45,5 @@ export default function G0test() {
   ////////
 
   // 5
-  console.log(new G0({x:10, y: 20}).moveTo({left: 10}))
+  console.log(new G0({y: 20}).moveTo({left: 12}))
 }

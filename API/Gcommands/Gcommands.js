@@ -21,4 +21,14 @@ export default class Gcommands extends GcodeAPI {
     GcodeAPI.previusY = this.y;
     GcodeAPI.previusZ = this.z;
   }
+
+  moveTo(_transformObj) {
+    this.left = _transformObj.left ?? 0;
+    this.top = _transformObj.top ?? 0;
+
+    this.toX = this.x + this.left;
+    this.toY = this.y - this.top;
+
+    return { thisX: this.toX, thisY: this.toY };
+  }
 }
