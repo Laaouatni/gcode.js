@@ -1,4 +1,4 @@
-import GcodeAPI from "../Gmain/GcodeAPI.js";
+import GcodeAPI from "../GcodeAPI.js";
 import PositionSpecificy from "./other/Specificy/PositionSpecificy.js";
 
 export default class Gcommands extends GcodeAPI {

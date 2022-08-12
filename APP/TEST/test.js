@@ -1,3 +1,7 @@
+// GcodeAPI
+import GcodeApiTest from './GcodeAPI_main/GcodeAPI.test.js';
+GcodeApiTest();
+
 // G0
 import G0test from './Gcommands/G/G0.test.js';
 G0test();
@@ -10,5 +14,6 @@ G1test();
 import PositionSpecificyTest from './Specificy/PositionSpecificy.test.js';
 PositionSpecificyTest();
 
+// MoveTo 
 import MoveToTEST from './Gcommands/MoveTo/MoveTo.js';
 MoveToTEST();
