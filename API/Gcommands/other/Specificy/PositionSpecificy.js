@@ -1,24 +1,29 @@
 export default class PositionSpecificy {
-  constructor() {
-    this.objArray = Object.keys(_transformObj).reverse();
+  constructor(_transformObj) {
+    this.obj = _transformObj;
+    this.objKeysArrayReversed = Object.keys(this.obj).reverse();
 
     this.XpossibleDirection = ["left", "right"];
     this.YpossibleDirection = ["top", "bottom"];
 
     this.choosedXDirection = () => {
-      this.objArray.find(
-        (element) =>
-          element === this.XpossibleDirection[0] ||
-          element === this.XpossibleDirection[1],
-      );
+      this.objKeysArrayReversed.find((element) => {
+        console.log("⚠️" + element)
+        return (
+          element === `${this.XpossibleDirection[0]}` ||
+          element === `${this.XpossibleDirection[1]}`
+        );
+      });
     };
 
     this.choosedYDirection = () => {
-      this.objArray.find(
-        (element) =>
-          element === this.YpossibleDirection[0] ||
-          element === this.YpossibleDirection[1],
-      );
+      this.objKeysArrayReversed.find((element) => {
+        console.log("⚠️" + element)
+        return (
+          element === `${this.YpossibleDirection[0]}` ||
+          element === `${this.YpossibleDirection[1]}`
+        );
+      });
     };
   }
 

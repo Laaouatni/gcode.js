@@ -36,7 +36,7 @@ export default class Gcommands extends GcodeAPI {
     console.log("//////////////////////////");
     console.log(_transformObj);
 
-    console.log(new PositionSpecificy().getChoosedDirection())
+    console.log(new PositionSpecificy(_transformObj))
     console.log("");
 
     this.toX = this.x + new DirectionValues().left;
