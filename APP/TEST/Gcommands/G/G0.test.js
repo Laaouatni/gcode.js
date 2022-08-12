@@ -43,11 +43,6 @@ export default function G0test() {
       z: 9,
     }).getCode(),
   );
-
-  ////////
-
-  // 5
-  console.log(new G0({ y: 20 }).moveTo({ left: 12, bottom: 15, right: 17, top: 23 }))
   
   console.warn("🧪 TEST FINISHED: G0 🚩")
 }

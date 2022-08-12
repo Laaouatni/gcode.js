@@ -9,3 +9,6 @@ G1test();
 // Position Specificy
 import PositionSpecificyTest from './Specificy/PositionSpecificy.test.js';
 PositionSpecificyTest();
+
+import MoveToTEST from './Gcommands/MoveTo/MoveTo.js';
+MoveToTEST();
