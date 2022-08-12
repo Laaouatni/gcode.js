@@ -1,9 +1,9 @@
 import GcodeAPI from "../Gmain/GcodeAPI.js";
+import PositionSpecificy from "./other/Specificy/PositionSpecificy.js";
 
 export default class Gcommands extends GcodeAPI {
   constructor(_xyzObj) {
     super(_xyzObj);
-    this.lineOfCode = "⚠️ No line of code - please use getCode() method first";
 
     this.x = parseInt(_xyzObj.x ?? GcodeAPI.previusX ?? 0);
     this.y = parseInt(_xyzObj.y ?? GcodeAPI.previusY ?? 0);
@@ -33,40 +33,11 @@ export default class Gcommands extends GcodeAPI {
       }
     }
 
-    class PositionSpecificy {
-      constructor() {
-        this.objArray = Object.keys(_transformObj).reverse();
-        this.XpossibleDirection = ["left", "right"];
-        this.YpossibleDirection = ["top", "bottom"];
-
-        this.choosedXDirection = () => {
-          this.objArray.find(
-            (element) => element === "left" || element === "right",
-          );
-        }
-
-        this.choosedYDirection = () => {
-          this.objArray.find(
-            (element) => element === "top" || element === "bottom",
-          );
-        }
-      }
-
-      getChoosedDirection() {
-        return {
-          x: this.choosedXDirection(),
-          y: this.choosedYDirection(),
-        };
-      }
-    }
-
     console.log("//////////////////////////");
     console.log(_transformObj);
 
-    console.log(new GetLastAddedObj().choosedXDirection, new GetLastAddedObj().choosedYDirection);
-
-    // console.log(new GetLastAddedObj());
-    // console.log(new DirectionValues());
+    console.log(new PositionSpecificy().getChoosedDirection())
+    console.log("");
 
     this.toX = this.x + new DirectionValues().left;
     this.toY = this.y - new DirectionValues().top;
