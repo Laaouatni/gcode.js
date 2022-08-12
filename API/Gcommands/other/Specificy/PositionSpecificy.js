@@ -25,5 +25,4 @@ export default class PositionSpecificy {
       y: this.choosedYDirection(),
     };
   }
-
 }

@@ -1,8 +1,7 @@
 import PositionSpecificy from "./../../../API/Gcommands/other/Specificy/PositionSpecificy.js";
 
 export default function PositionSpecificyTest() {
-
-  console.warn("🧪 TEST STARTED: POSITION_SPECIFICY 🏃‍♂️")
+  console.warn("🧪 TEST STARTED: POSITION_SPECIFICY 🏃‍♂️");
   // -1
   console.log(
     new PositionSpecificy({ left: 12, bottom: 15, right: 17, top: 23 }),
@@ -15,7 +14,17 @@ export default function PositionSpecificyTest() {
       bottom: 15,
       right: 17,
       top: 23,
-    }).getChoosedDirection(),
+    }).obj,
+  );
+
+  // 0
+  console.log(
+    new PositionSpecificy({
+      left: 12,
+      bottom: 15,
+      right: 17,
+      top: 23,
+    }).objKeysArrayReversed,
   );
 
   // 1
@@ -25,7 +34,7 @@ export default function PositionSpecificyTest() {
       bottom: 15,
       right: 17,
       top: 23,
-    }).XpossibleDirection,
+    }).getChoosedDirection(),
   );
 
   // 2
@@ -35,8 +44,18 @@ export default function PositionSpecificyTest() {
       bottom: 15,
       right: 17,
       top: 23,
-    }).YpossibleDirection
-  )
+    }).XpossibleDirection,
+  );
 
-  console.warn("🧪 TEST FINISHED: POSITION_SPECIFICY 🚩")
+  // 3
+  console.log(
+    new PositionSpecificy({
+      left: 12,
+      bottom: 15,
+      right: 17,
+      top: 23,
+    }).YpossibleDirection,
+  );
+
+  console.warn("🧪 TEST FINISHED: POSITION_SPECIFICY 🚩");
 }
