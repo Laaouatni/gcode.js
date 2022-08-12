@@ -4,6 +4,7 @@ import G1test from "./Gcommands/G/G1.test.js";
 import PositionSpecificyTest from "./Specificy/PositionSpecificy.test.js";
 import MoveToTEST from "./Gcommands/MoveTo/MoveTo.js";
 import DirectionValuesTEST from "./DirectionValues/DirectionValues.test.js";
+import G1LoopTEST from "./GloopTest/G1/G1loop.test.js";
 
 export default function consoleTEST() {
   // GcodeAPI
@@ -23,4 +24,7 @@ export default function consoleTEST() {
 
   // left, right, top, bottom, zIndex
   DirectionValuesTEST();
+
+  // for loop G1
+  G1LoopTEST();
 }

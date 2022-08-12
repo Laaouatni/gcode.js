@@ -9,13 +9,23 @@
   <body>
     hello world
     <script type="module">
-      let canActivateTests = { console: true };
+      let canActivateTests = {
+        console: true,
+      };
 
-      if (canActivateTests.console) {
+      if (canActivateTests.console == true) {
         import("./APP/TEST/test.js").then((myFunction) => {
           myFunction.default();
         });
+      } else {
+        console.log("test console are desactivated");
       }
+    </script>
+
+    <script type="module">
+      import G1 from "./API/Gcommands/G/G1.js";
+
+      
     </script>
   </body>
 </html>
