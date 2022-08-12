@@ -23,16 +23,17 @@ export default class Gcommands extends GcodeAPI {
   }
 
   moveTo(_transformObj) {
-    class directionValues {
+    class DirectionValues {
       constructor() {
         this.left = _transformObj.left ?? 0;
         this.right = _transformObj.right ?? 0;
-    
+
         this.top = _transformObj.top ?? 0;
         this.bottom = _transformObj.bottom ?? 0;
       }
     }
-    class getLastAddedObj {
+
+    class GetLastAddedObj {
       constructor() {
         this.objArray = Object.keys(_transformObj);
       }
@@ -41,10 +42,11 @@ export default class Gcommands extends GcodeAPI {
     console.log("//////////////////////////");
     console.log(_transformObj);
 
-    console.log(new getLastAddedObj());
+    // console.log(new GetLastAddedObj());
+    // console.log(new DirectionValues());
 
-    this.toX = this.x + this.left;
-    this.toY = this.y - this.top;
+    this.toX = this.x + new DirectionValues().left;
+    this.toY = this.y - new DirectionValues().top;
 
     console.log("/////////////////////");
 
