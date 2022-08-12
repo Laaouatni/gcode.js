@@ -8,7 +8,7 @@ export default function MoveToTEST() {
   console.log(new G0({}));
   console.log(new G1({}));
 
-  let obj = { left: 12, bottom: 15, right: 17, top: 23 };
+  let obj = { left: 12, bottom: 15, right: 17, top: 23, zIndex: 0 };
   // 0
   console.log(new G0({ y: 20 }).moveTo(obj));
 
@@ -19,6 +19,8 @@ export default function MoveToTEST() {
   console.log(new G1({ y: 20 }).moveTo(obj));
   
   console.log(new G1({ x: 10, y: 10 }).moveTo(obj));
+
+  console.log(new G1({ x: 10, y: 10 }).moveTo(obj))
 
   console.warn("🧪 TEST FINISHED: MOVE_TO 🚩");
 }

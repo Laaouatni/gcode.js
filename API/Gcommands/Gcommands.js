@@ -1,7 +1,6 @@
 import GcodeAPI from "../GcodeAPI.js";
 import DirectionValues from "./other/DirectionValues/DirectionValues.js";
 import PositionSpecificy from "./other/Specificy/PositionSpecificy.js";
-// import G1 from './G/G1.js';
 
 export default class Gcommands extends GcodeAPI {
   constructor(_xyzObj) {
@@ -35,8 +34,16 @@ export default class Gcommands extends GcodeAPI {
         ? this.y + new DirectionValues(_transformObj).bottom
         : this.y - new DirectionValues(_transformObj).top;
 
-    this.toZ = this.z ?? 0;
+    this.toZ = _transformObj.zIndex
+      ? this.z + _transformObj.zIndex
+      : this.z ?? 0;
 
-    return { x: this.toX, y: this.toY, z: this.toZ };
+    this.toResults = {
+      x: this.toX,
+      y: this.toY,
+      z: this.toZ,
+    };
+
+    return this.toResults;
   }
 }
