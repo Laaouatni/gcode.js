@@ -17,3 +17,6 @@ PositionSpecificyTest();
 // MoveTo 
 import MoveToTEST from './Gcommands/MoveTo/MoveTo.js';
 MoveToTEST();
+
+import DirectionValuesTEST from "./DirectionValues/DirectionValues.test.js";
+DirectionValuesTEST();

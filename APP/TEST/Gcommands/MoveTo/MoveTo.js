@@ -1,7 +1,7 @@
-import G0 from './../../../../API/Gcommands/G/G0.js';
+import G0 from "./../../../../API/Gcommands/G/G0.js";
 
 export default function MoveToTEST() {
-  console.warn("🧪 TEST STARTED: MOVE_TO 🏃‍♂️")
+  console.warn("🧪 TEST STARTED: MOVE_TO 🏃‍♂️");
 
   // 0
   console.log(
@@ -13,5 +13,5 @@ export default function MoveToTEST() {
     }),
   );
 
-  console.warn("🧪 TEST FINISHED: MOVE_TO 🚩")
+  console.warn("🧪 TEST FINISHED: MOVE_TO 🚩");
 }
