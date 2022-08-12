@@ -1,9 +1,9 @@
-import G1 from "../../API/Gcommands/G/G1.js";
+import G0 from "../../../../API/Gcommands/G/G0.js";
 
-export default function G1test() {
+export default function G0test() {
   // 0
   console.log(
-    new G1({
+    new G0({
       x: 1,
       y: 2,
     }).getCode(),
@@ -11,7 +11,7 @@ export default function G1test() {
 
   // 1
   console.log(
-    new G1({
+    new G0({
       x: 3,
       y: 4,
     }).getCode(),
@@ -19,21 +19,21 @@ export default function G1test() {
 
   // 2
   console.log(
-    new G1({
+    new G0({
       x: 5,
     }).getCode(),
   );
 
   // 3
   console.log(
-    new G1({
+    new G0({
       z: 6,
     }).getCode(),
   );
 
   // 4
   console.log(
-    new G1({
+    new G0({
       x: 7,
       y: 8,
       z: 9,
