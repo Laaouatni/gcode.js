@@ -35,12 +35,24 @@ export default class Gcommands extends GcodeAPI {
 
     class GetLastAddedObj {
       constructor() {
-        this.objArray = Object.keys(_transformObj);
+        this.objArray = Object.keys(_transformObj).reverse();
+        this.XpossibleDirection = ["left", "right"];
+        this.YpossibleDirection = ["top", "bottom"];
+
+        this.choosedXDirection = this.objArray.find(
+          (element) => element === "left" || element === "right",
+        );
+
+        this.choosedYDirection = this.objArray.find(
+          (element) => element === "top" || element === "bottom",
+        );
       }
     }
 
     console.log("//////////////////////////");
     console.log(_transformObj);
+
+    console.log(new GetLastAddedObj().choosedXDirection, new GetLastAddedObj().choosedYDirection);
 
     // console.log(new GetLastAddedObj());
     // console.log(new DirectionValues());
