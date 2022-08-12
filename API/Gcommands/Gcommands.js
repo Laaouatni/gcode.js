@@ -30,9 +30,9 @@ export default class Gcommands extends GcodeAPI {
         : this.x - new DirectionValues(_transformObj).right;
 
     this.toY =
-      new PositionSpecificy(_transformObj).getChoosedDirection().y === "top"
-        ? this.y - new DirectionValues(_transformObj).top
-        : this.y + new DirectionValues(_transformObj).bottom;
+      new PositionSpecificy(_transformObj).getChoosedDirection().y === "bottom"
+        ? this.y + new DirectionValues(_transformObj).bottom
+        : this.y - new DirectionValues(_transformObj).top;
 
     this.toZ = _transformObj.zIndex
       ? this.z + _transformObj.zIndex
