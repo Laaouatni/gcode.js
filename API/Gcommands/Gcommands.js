@@ -5,9 +5,9 @@ export default class Gcommands extends GcodeAPI {
     super(_xyzObj);
     this.lineOfCode = "⚠️ No line of code - please use getCode() method first";
 
-    this.x = _xyzObj.x ?? GcodeAPI.previusX ?? 0;
-    this.y = _xyzObj.y ?? GcodeAPI.previusY ?? 0;
-    this.z = _xyzObj.z ?? GcodeAPI.previusZ ?? 0;
+    this.x = parseInt(_xyzObj.x ?? GcodeAPI.previusX ?? 0);
+    this.y = parseInt(_xyzObj.y ?? GcodeAPI.previusY ?? 0);
+    this.z = parseInt(_xyzObj.z ?? GcodeAPI.previusZ ?? 0);
   }
 
   getCode() {
@@ -23,11 +23,30 @@ export default class Gcommands extends GcodeAPI {
   }
 
   moveTo(_transformObj) {
-    this.left = _transformObj.left ?? 0;
-    this.top = _transformObj.top ?? 0;
+    class directionValues {
+      constructor() {
+        this.left = _transformObj.left ?? 0;
+        this.right = _transformObj.right ?? 0;
+    
+        this.top = _transformObj.top ?? 0;
+        this.bottom = _transformObj.bottom ?? 0;
+      }
+    }
+    class getLastAddedObj {
+      constructor() {
+        this.objArray = Object.keys(_transformObj);
+      }
+    }
+
+    console.log("//////////////////////////");
+    console.log(_transformObj);
+
+    console.log(new getLastAddedObj());
 
     this.toX = this.x + this.left;
     this.toY = this.y - this.top;
+
+    console.log("/////////////////////");
 
     return { thisX: this.toX, thisY: this.toY };
   }
