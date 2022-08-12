@@ -1,6 +1,7 @@
 import G1 from "../../../../API/Gcommands/G/G1.js";
 
 export default function G1test() {
+  console.warn("🧪 TEST STARTED: G1 🏃‍♂️")
   // -1
   console.log(new G1({}));
   // 0
@@ -41,4 +42,6 @@ export default function G1test() {
       z: 9,
     }).getCode(),
   );
+
+  console.warn("🧪 TEST FINISHED: G1 🚩")
 }

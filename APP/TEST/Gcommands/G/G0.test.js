@@ -1,6 +1,8 @@
 import G0 from "../../../../API/Gcommands/G/G0.js";
 
 export default function G0test() {
+  console.warn("🧪 TEST STARTED: G0 🏃‍♂️")
+
   // -1
   console.log(new G0({}));
   // 0
@@ -45,5 +47,7 @@ export default function G0test() {
   ////////
 
   // 5
-  console.log(new G0({y: 20}).moveTo({left: 12, bottom: 15, right: 17, top: 23}))
+  console.log(new G0({ y: 20 }).moveTo({ left: 12, bottom: 15, right: 17, top: 23 }))
+  
+  console.warn("🧪 TEST FINISHED: G0 🚩")
 }

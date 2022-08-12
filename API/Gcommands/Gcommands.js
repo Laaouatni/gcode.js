@@ -33,16 +33,8 @@ export default class Gcommands extends GcodeAPI {
       }
     }
 
-    console.log("//////////////////////////");
-    console.log(_transformObj);
-
-    console.log(new PositionSpecificy(_transformObj))
-    console.log("");
-
     this.toX = this.x + new DirectionValues().left;
     this.toY = this.y - new DirectionValues().top;
-
-    console.log("/////////////////////");
 
     return { thisX: this.toX, thisY: this.toY };
   }
