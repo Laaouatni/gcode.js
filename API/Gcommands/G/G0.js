@@ -5,4 +5,10 @@ export default class G0 extends Gcommands {
     super(_xyzObj);
     this.prefix = `G0`;
   }
+
+  moveTo(_transformObj) {
+    this.newCoordTo = new Gcommands({}).moveTo(_transformObj);
+
+    return new G0(this.newCoordTo).getCode();
+  }
 }

@@ -8,6 +8,20 @@
   </head>
   <body>
     hello world
-    <script src="./js/test.js" type="module"></script>
+    <script type="module">
+      let canActivateTests = {
+        console: true,
+      };
+
+      if (canActivateTests.console == true) {
+        import("./APP/TEST/test.js").then((myFunction) => {
+          myFunction.default();
+        });
+      } else {
+        console.log("test console are desactivated");
+      }
+    </script>
+
+    <script></script>
   </body>
 </html>
