@@ -8,6 +8,14 @@
   </head>
   <body>
     hello world
-    <script src="./APP/TEST/test.js" type="module"></script>
+    <script type="module">
+      let canActivateTests = { console: true };
+
+      if (canActivateTests.console) {
+        import("./APP/TEST/test.js").then((myFunction) => {
+          myFunction.default();
+        });
+      }
+    </script>
   </body>
 </html>
