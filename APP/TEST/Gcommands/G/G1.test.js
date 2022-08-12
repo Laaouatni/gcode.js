@@ -1,6 +1,8 @@
 import G1 from "../../../../API/Gcommands/G/G1.js";
 
 export default function G1test() {
+  // -1
+  console.log(new G1({}));
   // 0
   console.log(
     new G1({

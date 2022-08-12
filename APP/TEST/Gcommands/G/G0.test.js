@@ -1,6 +1,8 @@
 import G0 from "../../../../API/Gcommands/G/G0.js";
 
 export default function G0test() {
+  // -1
+  console.log(new G0({}));
   // 0
   console.log(
     new G0({

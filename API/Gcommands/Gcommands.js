@@ -2,7 +2,7 @@ import GcodeAPI from "../Gmain/GcodeAPI.js";
 
 export default class Gcommands extends GcodeAPI {
   constructor(_xyzObj) {
-    super();
+    super(_xyzObj);
     this.lineOfCode = "⚠️ No line of code - please use getCode() method first";
 
     this.x = _xyzObj.x ?? GcodeAPI.previusX ?? 0;
