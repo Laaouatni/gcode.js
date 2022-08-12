@@ -7,13 +7,13 @@ export default class PositionSpecificy {
     this.YpossibleDirection = ["top", "bottom"];
 
     this.choosedXDirection = () => {
-      this.objKeysArrayReversed.find((element, index) => {
+      return this.objKeysArrayReversed.find((element, index) => {
         return element === `${this.XpossibleDirection[index]}`;
       });
     };
 
     this.choosedYDirection = () => {
-      this.objKeysArrayReversed.find((element, index) => {
+      return this.objKeysArrayReversed.find((element, index) => {
         return element === `${this.YpossibleDirection[index]}`;
       });
     };
@@ -25,4 +25,5 @@ export default class PositionSpecificy {
       y: this.choosedYDirection(),
     };
   }
+
 }
