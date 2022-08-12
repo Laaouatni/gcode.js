@@ -41,4 +41,9 @@ export default function G0test() {
       z: 9,
     }).getCode(),
   );
+
+  ////////
+
+  // 5
+  console.log(new G0({x:10, y: 20}).moveTo({left: 10}))
 }

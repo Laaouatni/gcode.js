@@ -1,11 +1,9 @@
-import Gcommands from "../Gcommands/Gcommands.js";
+// import GcodeAPI from './../Gmain/GcodeAPI.js';
+// import Gcommands from "./../Gcommands/Gcommands.js"
+// import G0 from './../Gcommands/G/G0.js';
 
-export default class Gtransform {  
-  moveTo(_transformObj) {
-    this.left = _transformObj.left ?? 0;
-
-    return this.left;
-  }
-}
+// export default class Gtransform extends Gcommands {  
+  
+// }
 
 
