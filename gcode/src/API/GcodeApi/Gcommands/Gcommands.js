@@ -1,6 +1,5 @@
 import GcodeAPI from "../GcodeAPI.js";
-import DirectionValues from "./other/DirectionValues/DirectionValues.js";
-import PositionSpecificy from "./other/Specificy/PositionSpecificy.js";
+import MoveTo from './other/Methods/MoveTo/MoveTo.js';
 
 export default class Gcommands extends GcodeAPI {
   constructor(_xyzObj) {
@@ -25,26 +24,6 @@ export default class Gcommands extends GcodeAPI {
   }
 
   moveTo(_transformObj) {
-    this.toX =
-      new PositionSpecificy(_transformObj).getChoosedDirection().x === "left"
-        ? this.x + new DirectionValues(_transformObj).left
-        : this.x - new DirectionValues(_transformObj).right;
-
-    this.toY =
-      new PositionSpecificy(_transformObj).getChoosedDirection().y === "bottom"
-        ? this.y + new DirectionValues(_transformObj).bottom
-        : this.y - new DirectionValues(_transformObj).top;
-
-    this.toZ = _transformObj.zIndex
-      ? this.z + _transformObj.zIndex
-      : this.z ?? 0;
-
-    this.toResults = {
-      x: this.toX,
-      y: this.toY,
-      z: this.toZ,
-    };
-
-    return this.toResults;
+    return new MoveTo(_transformObj, {x: this.x, y: this.y, z: this.z}).getResult();
   }
 }
