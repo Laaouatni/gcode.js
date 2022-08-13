@@ -1,3 +1,1 @@
-// document.querySelector('#app').innerHTML = `
-//   hello world
-// `
+console.log("hello world")
