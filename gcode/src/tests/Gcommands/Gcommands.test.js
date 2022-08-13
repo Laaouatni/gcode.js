@@ -1,9 +1,17 @@
-import Gcommands from "../../../API/GcodeApi/Gcommands/Gcommands.js";
+import Gcommands from "../../API/GcodeApi/Gcommands/Gcommands.js";
 
-export default function GcommandsTEST() {
-  console.warn("🧪 TEST STARTED: GCOMMANDS 🏃‍♂️");
+describe("Gcommands", () => {
+  describe("imported correctly", () => {
+    test("isn't null", () => {
+      expect(new Gcommands({})).not.toBeNull();
+    });
 
-  console.log(new Gcommands({}))
+    test("isn't undefined", () => {
+      expect(new Gcommands({})).not.toBeUndefined();
+    });
 
-  console.warn("🧪 TEST FINISHED: GCOMMANDS 🚩");
-}
+    test("is defined", () => {
+      expect(new Gcommands({})).toBeDefined();
+    });
+  });
+});

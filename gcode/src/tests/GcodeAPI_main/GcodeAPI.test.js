@@ -1,10 +1,17 @@
-import GcodeAPI from './../../../API/GcodeApi/GcodeAPI.js';
+import GcodeAPI from "../../API/GcodeApi/GcodeAPI.js";
 
-export default function GcodeApiTest() {
-  console.warn("🧪 TEST STARTED: GCODE_API_MAIN 🏃‍♂️")
+describe("GcodeAPI main", () => {
+  describe("imported correctly", () => {
+    test("isn't null", () => {
+      expect(new GcodeAPI()).not.toBeNull();
+    });
 
-  // -1
-  console.log(new GcodeAPI());
+    test("isn't undefined", () => {
+      expect(new GcodeAPI()).not.toBeUndefined();
+    });
 
-  console.warn("🧪 TEST FINISHED: GCODE_API_MAIN 🚩")
-}
+    test("is defined", () => {
+      expect(new GcodeAPI()).toBeDefined();
+    });
+  });
+});

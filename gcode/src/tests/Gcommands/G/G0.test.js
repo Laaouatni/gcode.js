@@ -1,48 +1,125 @@
-import G0 from "../../../../API/GcodeApi/Gcommands/G/G0.js";
+import G0 from "../../../API/GcodeApi/Gcommands/G/G0.js";
 
-export default function G0test() {
-  console.warn("🧪 TEST STARTED: G0 🏃‍♂️")
+describe("G0", () => {
+  describe("imported correcly", () => {
+    test("isn't null", () => {
+      expect(new G0({})).not.toBeNull();
+    });
 
-  // -1
-  console.log(new G0({}));
-  // 0
-  console.log(
-    new G0({
-      x: 1,
-      y: 2,
-    }).getCode(),
-  );
+    test("isn't undefined", () => {
+      expect(new G0({})).not.toBeUndefined();
+    });
 
-  // 1
-  console.log(
-    new G0({
-      x: 3,
-      y: 4,
-    }).getCode(),
-  );
+    test("is defined", () => {
+      expect(new G0({})).toBeDefined();
+    });
+  });
 
-  // 2
-  console.log(
-    new G0({
-      x: 5,
-    }).getCode(),
-  );
+  describe("prefix", () => {
+    test("is G0", () => {
+      expect(new G0({}).prefix).toBe("G0");
+    });
+  });
 
-  // 3
-  console.log(
-    new G0({
-      z: 6,
-    }).getCode(),
-  );
+  describe("coordinates", () => {
+    describe("at the start", () => {
+      describe("x", () => {
+        test("is 0", () => {
+          expect(new G0({}).x).toBe("0");
+        });
+      });
 
-  // 4
-  console.log(
-    new G0({
-      x: 7,
-      y: 8,
-      z: 9,
-    }).getCode(),
-  );
-  
-  console.warn("🧪 TEST FINISHED: G0 🚩")
-}
+      describe("y", () => {
+        test("is 0", () => {
+          expect(new G0({}).y).toBe("0");
+        });
+      });
+
+      describe("z", () => {
+        test("is 0", () => {
+          expect(new G0({}).z).toBe("0");
+        });
+      });
+    });
+
+    describe("after adding adding a object", () => {
+      describe("only one object", () => {
+        describe("x object", () => {
+          let obj = {
+            x: 10,
+          };
+
+          test("defined x", () => {
+            expect(new G0(obj).x).not.toBe("0");
+            expect(new G0(obj).x).toBe(obj.x);
+          });
+
+          describe("check other (y,z)", () => {
+            test("y is 0", () => {
+              expect(new G0(obj).y).toBe("0");
+            });
+
+            test("z is 0", () => {
+              expect(new G0(obj).z).toBe("0");
+            });
+          });
+        });
+      });
+
+      describe("y object", () => {
+        let obj = {
+          y: 10,
+        };
+
+        test("defined y", () => {
+          expect(new G0(obj).y).not.toBe("0");
+          expect(new G0(obj).y).toBe(obj.y);
+        });
+
+        describe("check other (x,z)", () => {
+          test("x is 0", () => {
+            expect(new G0(obj).x).toBe("0");
+          });
+
+          test("z is 0", () => {
+            expect(new G0(obj).z).toBe("0");
+          });
+        });
+      });
+
+      describe("z object", () => {
+        let obj = {
+          z: 10,
+        };
+
+        test("defined y", () => {
+          expect(new G0(obj).z).not.toBe("0");
+          expect(new G0(obj).z).toBe(obj.y);
+        });
+
+        describe("check other (x,y)", () => {
+          test("x is 0", () => {
+            expect(new G0(obj).x).toBe("0");
+          });
+
+          test("y is 0", () => {
+            expect(new G0(obj).y).toBe("0");
+          });
+        });
+      });
+    });
+
+    describe("every object is added", () => {
+      let obj = {
+        x: 10,
+        y: 20,
+        z: 30,
+      };
+
+      test("obj", () => {
+        expect(new G0(obj)).toBe(obj);
+        expect(new G0(obj).y).toBe(obj.y);
+      });
+    });
+  });
+});

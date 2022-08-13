@@ -1,80 +1,80 @@
-import G0 from "../../../../API/GcodeApi/Gcommands/G/G1.js";
+import G0 from "../../../API/GcodeApi/Gcommands/G/G0.js";
 
-export default function G0LoopTEST() {
-  console.warn("🧪 TEST STARTED: G0_LOOP 🏃‍♂️");
+let Ntimes = 10;
 
-  let Ntimes = 10;
+leftLoop();
+rightLoop();
+bottomLoop();
+topLoop();
+zIndexLoop();
 
-  leftLoop();
-  rightLoop();
-  topLoop();
-  bottomLoop();
-  zIndexLoop();
+function leftLoop() {
+  for (let i = 0; i < Ntimes; i++) {
+    let x = new G0({});
 
-  function leftLoop() {
-    // left
-    console.warn("➡️ LEFT FOR LOOP");
+    x.moveTo({
+      left: 10,
+    });
 
-    for (let i = 0; i < Ntimes; i++) {
-      console.log(
-        new G0({}).moveTo({
-          left: 10,
-        }),
-      );
-    }
+    test("X left loop", () => {
+      expect(x).toBe(i * 10);
+    });
   }
+}
 
-  function rightLoop() {
-    console.warn("⬅️ RIGHT FOR LOOP");
+function rightLoop() {
+  for (let i = 0; i < Ntimes; i++) {
+    let x = new G0({});
 
-    // right
-    for (let i = 0; i < Ntimes; i++) {
-      console.log(
-        new G0({}).moveTo({
-          right: 10,
-        }),
-      );
-    }
+    x.moveTo({
+      right: 10,
+    });
+
+    test("X right loop", () => {
+      expect(x.x).toBe(Ntimes * 10 - i * 10);
+    });
   }
+}
 
-  function bottomLoop() {
-    console.warn("⬆️ BOTTOM FOR LOOP");
+function bottomLoop() {
+  for (let i = 0; i < Ntimes; i++) {
+    let y = new G0({});
 
-    // bottom
-    for (let i = 0; i < Ntimes; i++) {
-      console.log(
-        new G0({}).moveTo({
-          bottom: 10,
-        }),
-      );
-    }
+    y.moveTo({
+      bottom: 10,
+    });
+
+    test("Y bottom loop", () => {
+      expect(y.y).toBe(i * 10);
+    });
   }
+}
 
-  function topLoop() {
-    console.warn("⬇️ TOP FOR LOOP");
+function topLoop() {
+  // top
+  for (let i = 0; i < Ntimes; i++) {
+    let y = new G0({});
 
-    // top
-    for (let i = 0; i < Ntimes; i++) {
-      console.log(
-        new G0({}).moveTo({
-          top: 10,
-        }),
-      );
-    }
+    y.moveTo({
+      top: 10,
+    });
+
+    test("Y top loop", () => {
+      expect(y.y).toBe(Ntimes * 10 - i * 10);
+    });
   }
+}
 
-  function zIndexLoop() {
-    console.warn("🔼 ZINDEX FOR LOOP");
+function zIndexLoop() {
+  for (let i = 0; i < Ntimes; i++) {
+    let z = new G0({});
 
-    // zIndex
-    for (let i = 0; i < Ntimes; i++) {
-      console.log(
-        new G0({}).moveTo({
-          zIndex: 10,
-        }),
-      );
-    }
+    z.moveTo({
+      zIndex: 10,
+    });
+
+    test("Z zIndex loop", () => {
+      expect(z.z).toBe(i * 10);
+    });
   }
-
-  console.warn("🧪 TEST FINISHED: G0_LOOP 🚩");
 }
