@@ -9,20 +9,6 @@
   <body>
     <div id="app">hello world</div>
 
-    <script type="module">
-      let canActivateTests = {
-        console: true,
-      };
-
-      if (canActivateTests.console == true) {
-        import("./src/APP/TEST/test.js").then((myFunction) => {
-          myFunction.default();
-        });
-      } else {
-        console.log("test console are desactivated");
-      }
-    </script>
-    
     <script type="module" src="/main.js"></script>
   </body>
 </html>
