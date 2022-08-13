@@ -1,11 +1,12 @@
 import PositionSpecificy from "../../Specificy/PositionSpecificy.js";
 import DirectionValues from '../../DirectionValues/DirectionValues.js';
+import Gcommands from './../../../Gcommands.js';
 
-export default class MoveTo {
-  constructor(_transformObj, thisPosObj) {
-    this.x = thisPosObj.x;
-    this.y = thisPosObj.y;
-    this.z = thisPosObj.z;
+export default class MoveTo{
+  constructor(_thisGcommandObject, _transformObj) {
+    this.x = _thisGcommandObject.x;
+    this.y = _thisGcommandObject.y;
+    this.z = _thisGcommandObject.z;
 
     this.toX =
       new PositionSpecificy(_transformObj).getChoosedDirection().x ===

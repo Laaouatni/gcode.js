@@ -1,5 +1,5 @@
 import GcodeAPI from "../GcodeAPI.js";
-import MoveTo from './other/Methods/MoveTo/MoveTo.js';
+import MoveTo from "./other/Methods/MoveTo/MoveTo.js";
 
 export default class Gcommands extends GcodeAPI {
   constructor(_xyzObj) {
@@ -24,6 +24,6 @@ export default class Gcommands extends GcodeAPI {
   }
 
   moveTo(_transformObj) {
-    return new MoveTo(_transformObj, {x: this.x, y: this.y, z: this.z}).getResult();
+    return new MoveTo(this, _transformObj).getResult();
   }
 }
