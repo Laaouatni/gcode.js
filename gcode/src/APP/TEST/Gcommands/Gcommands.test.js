@@ -1,4 +1,4 @@
-import Gcommands from "../../../API/Gcommands/Gcommands.js";
+import Gcommands from "../../../API/GcodeApi/Gcommands/Gcommands.js";
 
 export default function GcommandsTEST() {
   console.warn("🧪 TEST STARTED: GCOMMANDS 🏃‍♂️");

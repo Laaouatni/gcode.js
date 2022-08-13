@@ -1,4 +1,4 @@
-import DirectionValues from "../../../API/Gcommands/other/DirectionValues/DirectionValues.js";
+import DirectionValues from "../../../API/GcodeApi/Gcommands/other/DirectionValues/DirectionValues.js";
 
 export default function DirectionValuesTEST() {
   console.warn(

@@ -1,5 +1,5 @@
-import G0 from "./../../../../API/Gcommands/G/G0.js";
-import G1 from "./../../../../API/Gcommands/G/G1.js";
+import G0 from "../../../../API/GcodeApi/Gcommands/G/G0.js";
+import G1 from "../../../../API/GcodeApi/Gcommands/G/G1.js";
 
 export default function MoveToTEST() {
   console.warn("🧪 TEST STARTED: MOVE_TO 🏃‍♂️");
