@@ -1,4 +1,4 @@
-import PositionSpecificy from "./../../../API/Gcommands/other/Specificy/PositionSpecificy.js";
+import PositionSpecificy from "./../../../API/GcodeApi/Gcommands/other/Specificy/PositionSpecificy.js";
 
 export default function PositionSpecificyTest() {
   console.warn("🧪 TEST STARTED: POSITION_SPECIFICY 🏃‍♂️");

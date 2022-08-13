@@ -1,13 +1,12 @@
-import G0 from "../../../../API/Gcommands/G/G0.js";
+import G1 from "../../../../API/GcodeApi/Gcommands/G/G1.js";
 
-export default function G0test() {
-  console.warn("🧪 TEST STARTED: G0 🏃‍♂️")
-
+export default function G1test() {
+  console.warn("🧪 TEST STARTED: G1 🏃‍♂️")
   // -1
-  console.log(new G0({}));
+  console.log(new G1({}));
   // 0
   console.log(
-    new G0({
+    new G1({
       x: 1,
       y: 2,
     }).getCode(),
@@ -15,7 +14,7 @@ export default function G0test() {
 
   // 1
   console.log(
-    new G0({
+    new G1({
       x: 3,
       y: 4,
     }).getCode(),
@@ -23,26 +22,26 @@ export default function G0test() {
 
   // 2
   console.log(
-    new G0({
+    new G1({
       x: 5,
     }).getCode(),
   );
 
   // 3
   console.log(
-    new G0({
+    new G1({
       z: 6,
     }).getCode(),
   );
 
   // 4
   console.log(
-    new G0({
+    new G1({
       x: 7,
       y: 8,
       z: 9,
     }).getCode(),
   );
-  
-  console.warn("🧪 TEST FINISHED: G0 🚩")
+
+  console.warn("🧪 TEST FINISHED: G1 🚩")
 }

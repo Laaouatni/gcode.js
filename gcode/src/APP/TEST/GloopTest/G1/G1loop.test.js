@@ -1,7 +1,7 @@
-import G0 from "../../../../API/Gcommands/G/G0.js";
+import G1 from "../../../../API/GcodeApi/Gcommands/G/G1.js";
 
-export default function G0LoopTEST() {
-  console.warn("🧪 TEST STARTED: G0_LOOP 🏃‍♂️");
+export default function G1LoopTEST() {
+  console.warn("🧪 TEST STARTED: G1_LOOP 🏃‍♂️");
 
   let Ntimes = 10;
 
@@ -17,7 +17,7 @@ export default function G0LoopTEST() {
 
     for (let i = 0; i < Ntimes; i++) {
       console.log(
-        new G0({}).moveTo({
+        new G1({}).moveTo({
           left: 10,
         }),
       );
@@ -30,7 +30,7 @@ export default function G0LoopTEST() {
     // right
     for (let i = 0; i < Ntimes; i++) {
       console.log(
-        new G0({}).moveTo({
+        new G1({}).moveTo({
           right: 10,
         }),
       );
@@ -43,7 +43,7 @@ export default function G0LoopTEST() {
     // bottom
     for (let i = 0; i < Ntimes; i++) {
       console.log(
-        new G0({}).moveTo({
+        new G1({}).moveTo({
           bottom: 10,
         }),
       );
@@ -56,7 +56,7 @@ export default function G0LoopTEST() {
     // top
     for (let i = 0; i < Ntimes; i++) {
       console.log(
-        new G0({}).moveTo({
+        new G1({}).moveTo({
           top: 10,
         }),
       );
@@ -69,12 +69,12 @@ export default function G0LoopTEST() {
     // zIndex
     for (let i = 0; i < Ntimes; i++) {
       console.log(
-        new G0({}).moveTo({
+        new G1({}).moveTo({
           zIndex: 10,
         }),
       );
     }
   }
 
-  console.warn("🧪 TEST FINISHED: G0_LOOP 🚩");
+  console.warn("🧪 TEST FINISHED: G1_LOOP 🚩");
 }
