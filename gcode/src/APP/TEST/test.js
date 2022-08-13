@@ -7,7 +7,6 @@ import DirectionValuesTEST from "./DirectionValues/DirectionValues.test.js";
 import G0LoopTEST from './GloopTest/G0/G0loop.test.js';
 import G1LoopTEST from "./GloopTest/G1/G1loop.test.js";
 import GcommandsTEST from "../TEST/Gcommands/Gcommands.test.js";
-import usingVitest from "./usingVitest/usingVitest.js";
 
 export default function consoleTEST() {
   // GcodeAPI
@@ -36,6 +35,4 @@ export default function consoleTEST() {
 
   // Gcommands
   GcommandsTEST();
-
-  usingVitest();
 }
