@@ -10,7 +10,7 @@ describe("DirectionValues", () => {
     };
 
     test("this.obj", () => {
-      expect(new DirectionValues(obj)).toBe(obj);
+      expect(new DirectionValues(obj).obj).toBe(obj);
     });
 
     describe("testing every position", () => {

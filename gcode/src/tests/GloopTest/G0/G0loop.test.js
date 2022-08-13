@@ -1,6 +1,6 @@
 import G0 from "../../../API/GcodeApi/Gcommands/G/G0.js";
 
-let Ntimes = 10;
+let Ntimes = 3;
 
 leftLoop();
 rightLoop();
@@ -16,8 +16,8 @@ function leftLoop() {
       left: 10,
     });
 
-    test("X left loop", () => {
-      expect(x).toBe(i * 10);
+    test(`G0 X left loop ${i}`, () => {
+      expect(x.x).toBe(i * 10);
     });
   }
 }
@@ -30,7 +30,7 @@ function rightLoop() {
       right: 10,
     });
 
-    test("X right loop", () => {
+    test(`G0 X right loop ${i}`, () => {
       expect(x.x).toBe(Ntimes * 10 - i * 10);
     });
   }
@@ -44,7 +44,7 @@ function bottomLoop() {
       bottom: 10,
     });
 
-    test("Y bottom loop", () => {
+    test(`G0 Y bottom loop ${i}`, () => {
       expect(y.y).toBe(i * 10);
     });
   }
@@ -59,7 +59,7 @@ function topLoop() {
       top: 10,
     });
 
-    test("Y top loop", () => {
+    test(`G0 Y top loop ${i}`, () => {
       expect(y.y).toBe(Ntimes * 10 - i * 10);
     });
   }
@@ -73,7 +73,7 @@ function zIndexLoop() {
       zIndex: 10,
     });
 
-    test("Z zIndex loop", () => {
+    test(`G0 Z zIndex loop ${i}`, () => {
       expect(z.z).toBe(i * 10);
     });
   }
