@@ -10,17 +10,16 @@ let a = new G0({ x: 10, y: 10 });
 
 a.moveTo({ left: 100 });
 a.moveTo({ bottom: 100 });
+a.moveTo({ bottom: 200 });
+a.moveTo({ left: 400 });
 
 console.log(GcodeAPI.array);
 
-// create a canvas
 
+let g = new Gcanvas({
+  width: 0,
+  height: 400,
+  parentHtmlContainer: document.querySelector("section"),
+});
 
-
-console.log(
-  new Gcanvas({
-    width: 0,
-    height: 400,
-    parentHtmlContainer: document.querySelector("section"),
-  }).create(),
-);
+g.generate();

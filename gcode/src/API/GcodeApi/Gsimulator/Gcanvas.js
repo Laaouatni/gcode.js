@@ -1,4 +1,5 @@
 import Gsimulator from "./Gsimulator.js";
+import GcodeAPI from './../GcodeAPI_main/GcodeAPI.js';
 
 export default class Gcanvas extends Gsimulator {
   constructor(_GcanvasObj) {
@@ -13,6 +14,7 @@ export default class Gcanvas extends Gsimulator {
     this.canvasElement = document.createElement("canvas");
     this.appendCanvasToParent();
     this.changeSize();
+    this.reset();
   }
 
   appendCanvasToParent() {
@@ -22,5 +24,23 @@ export default class Gcanvas extends Gsimulator {
   changeSize() {
     this.canvasElement.width = this.width;
     this.canvasElement.height = this.height;
+  }
+
+  reset() {
+    this.ctx = this.canvasElement.getContext("2d");
+    this.ctx.beginPath();
+  }
+
+  drawLine(_obj) {
+    this.ctx.lineTo(_obj.x, _obj.y);
+    this.ctx.stroke();
+  }
+
+  generate() {
+    this.create();
+
+    GcodeAPI.array.forEach(pos => {
+      this.drawLine(pos)
+    })
   }
 }
