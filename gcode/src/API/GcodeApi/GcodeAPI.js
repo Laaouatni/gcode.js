@@ -3,8 +3,10 @@ export default class GcodeAPI {
   static array = [];
 
   constructor() {
-    new PushGclassesToArray(this);
+    this.PushGclassesToArray(this);
+  }
 
-    console.log(GcodeAPI.array)
+  PushGclassesToArray() {
+    return new PushGclassesToArray(this);
   }
 }
