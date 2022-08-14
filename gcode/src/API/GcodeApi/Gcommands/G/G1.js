@@ -1,4 +1,5 @@
 import Gcommands from "../Gcommands.js";
+import MoveTo from "../other/Methods/MoveTo/MoveTo.js";
 
 export default class G1 extends Gcommands {
   constructor(_xyzObj) {
@@ -7,8 +8,8 @@ export default class G1 extends Gcommands {
   }
 
   moveTo(_transformObj) {
-    this.newCoordTo = new Gcommands({}).moveTo(_transformObj);
+    this.newCoordTo = new MoveTo(this, _transformObj).getResult();
 
-    return new G1(this.newCoordTo).getCode();
+    return new G0(this.newCoordTo).getCode();
   }
 }

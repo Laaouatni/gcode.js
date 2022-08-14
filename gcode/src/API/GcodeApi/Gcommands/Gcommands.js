@@ -1,5 +1,4 @@
 import GcodeAPI from "../GcodeAPI_main/GcodeAPI.js";
-import MoveTo from "./other/Methods/MoveTo/MoveTo.js";
 
 export default class Gcommands extends GcodeAPI {
   constructor(_xyzObj) {
@@ -8,8 +7,10 @@ export default class Gcommands extends GcodeAPI {
     this.x = parseInt(_xyzObj.x ?? GcodeAPI.previusX ?? 0);
     this.y = parseInt(_xyzObj.y ?? GcodeAPI.previusY ?? 0);
     this.z = parseInt(_xyzObj.z ?? GcodeAPI.previusZ ?? 0);
+    
+    console.log("❌", this);
   }
-
+  
   getCode() {
     this.setLastPosition();
     this.lineOfCode = `${this.prefix} X${this.x} Y${this.y} Z${this.z}`;
@@ -21,9 +22,5 @@ export default class Gcommands extends GcodeAPI {
     GcodeAPI.previusX = this.x;
     GcodeAPI.previusY = this.y;
     GcodeAPI.previusZ = this.z;
-  }
-
-  moveTo(_transformObj) {
-    return new MoveTo(this, _transformObj).getResult();
   }
 }
