@@ -5,6 +5,6 @@ export default class GcodeAPI {
   constructor() {
     new PushGclassesToArray(this);
 
-    console.log(GcodeAPI.array.constructor.name)
+    console.log(GcodeAPI.array)
   }
 }
