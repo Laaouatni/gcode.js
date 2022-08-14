@@ -1,4 +1,4 @@
-import GcodeAPI from "../../../GcodeAPI.js";
+import GcodeAPI from "../../../GcodeAPI_main/GcodeAPI.js";
 
 export default class PushGclassesToArray {
   constructor(_this) {

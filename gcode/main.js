@@ -1,5 +1,4 @@
 import G0 from "./src/API/GcodeApi/Gcommands/G/G0.js";
-import GcodeAPI from './src/API/GcodeApi/GcodeAPI';
 
 let g = new G0({});
 console.log(g.moveTo({left: 10}));

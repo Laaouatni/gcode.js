@@ -1,4 +1,4 @@
-import GcodeAPI from "../GcodeAPI.js";
+import GcodeAPI from "../GcodeAPI_main/GcodeAPI.js";
 import MoveTo from "./other/Methods/MoveTo/MoveTo.js";
 
 export default class Gcommands extends GcodeAPI {

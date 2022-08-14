@@ -1,5 +1,5 @@
 import { describe } from "vitest";
-import GcodeAPI from "../../API/GcodeApi/GcodeAPI.js";
+import GcodeAPI from "../../API/GcodeApi/GcodeAPI_main/GcodeAPI.js";
 
 describe("GcodeAPI main", () => {
   describe("imported correctly", () => {
