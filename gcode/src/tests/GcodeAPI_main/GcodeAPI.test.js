@@ -1,4 +1,5 @@
-import GcodeAPI from "../../API/GcodeApi/GcodeAPI.js";
+import { describe } from "vitest";
+import GcodeAPI from "../../API/GcodeApi/GcodeAPI_main/GcodeAPI.js";
 
 describe("GcodeAPI main", () => {
   describe("imported correctly", () => {
@@ -14,4 +15,10 @@ describe("GcodeAPI main", () => {
       expect(new GcodeAPI()).toBeDefined();
     });
   });
+
+  // describe("static array", () => {
+  //   test("not Gcommands", () => {
+  //     expect(GcodeAPI.array).not.toBe("Gcommands")
+  //   })
+  // })
 });
