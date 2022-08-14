@@ -11,8 +11,6 @@ console.log("hello world")
 // create a canvas
 // that create a line with given coordinates
 
-console.log(GcodeAPI.array)
-
 let canvas = document.createElement("canvas");
 canvas.width = 500;
 canvas.height = 500;

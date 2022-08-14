@@ -1,19 +1,10 @@
+import PushGclassesToArray from "./GcodeAPI_main/other/Methods/PushGclassesToArray.js";
 export default class GcodeAPI {
   static array = [];
 
   constructor() {
-    console.log(GcodeAPI.array);
+    new PushGclassesToArray(this);
 
-    this.addGcommandToArray = this.addGcommandsToArray();
-  }
-
-  addGcommandToArray() {
-    this.notToPush = ["Gcommands"];
-
-    console.log(this.notToPush);
-
-    if (this.constructor.name != this.notToPush[0]) {
-      GcodeAPI.array.push(this);
-    }
+    console.log(GcodeAPI.array.constructor.name)
   }
 }
