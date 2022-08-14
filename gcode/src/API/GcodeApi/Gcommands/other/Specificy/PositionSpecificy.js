@@ -8,13 +8,19 @@ export default class PositionSpecificy {
 
     this.choosedXDirection = () => {
       return this.objKeysArrayReversed.find((element) => {
-        return element === "left" || element === "right";
+        return (
+          element === this.XpossibleDirection[0] ||
+          element === this.XpossibleDirection[1]
+        );
       });
     };
 
     this.choosedYDirection = () => {
       return this.objKeysArrayReversed.find((element) => {
-        return element === "top" || element === "bottom";
+        return (
+          element === this.YpossibleDirection[0] ||
+          element === this.YpossibleDirection[1]
+        );
       });
     };
   }

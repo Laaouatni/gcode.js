@@ -1,6 +1,5 @@
 import PositionSpecificy from "../../Specificy/PositionSpecificy.js";
 import DirectionValues from '../../DirectionValues/DirectionValues.js';
-import Gcommands from './../../../Gcommands.js';
 
 export default class MoveTo{
   constructor(_this, _transformObj) {
