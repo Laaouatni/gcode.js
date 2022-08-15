@@ -5,12 +5,12 @@ import Gcss from "./src/API/GcodeApi/Gsimulator/Gcss/Gcss.js";
 
 let a = new G0({ x: 10, y: 10 });
 
-console.log(a.moveTo({ left: 100 }));
-console.log(a.moveTo({ bottom: 100 }));
-console.log(a.moveTo({ bottom: 100, left: 100}));
-console.log(a.moveTo({ right: 100, zIndex: 100 }));
+console.log(a.moveTo({ left: 120 }));
+console.log(a.moveTo({ bottom: 150 }));
+console.log(a.moveTo({ bottom: 190, left: 300}));
+console.log(a.moveTo({ right: 70, zIndex: 80 }));
 console.log(a.moveTo({ zIndex: -100}));
-console.log(a.moveTo({ left: 500}));
+console.log(a.moveTo({ left: 300}));
 
 
 let g = new Gcss({
