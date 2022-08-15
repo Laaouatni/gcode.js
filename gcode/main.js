@@ -8,13 +8,8 @@ import Gcanvas from "./src/API/GcodeApi/Gsimulator/Gcanvas";
 
 let a = new G0({ x: 10, y: 10 });
 
-a.moveTo({ left: 100 });
-a.moveTo({ bottom: 100 });
-a.moveTo({ bottom: 200 });
-a.moveTo({ left: 400 });
-
-console.log(GcodeAPI.array);
-
+console.log(a.moveTo({ left: 100 }));
+console.log(a.moveTo({ bottom: 200 }));
 
 let g = new Gcanvas({
   width: 0,

@@ -7,8 +7,6 @@ export default class Gcommands extends GcodeAPI {
     this.x = parseInt(_xyzObj.x ?? GcodeAPI.previusX ?? 0);
     this.y = parseInt(_xyzObj.y ?? GcodeAPI.previusY ?? 0);
     this.z = parseInt(_xyzObj.z ?? GcodeAPI.previusZ ?? 0);
-    
-    console.log("❌", this);
   }
   
   getCode() {

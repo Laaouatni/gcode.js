@@ -10,6 +10,6 @@ export default class G1 extends Gcommands {
   moveTo(_transformObj) {
     this.newCoordTo = new MoveTo(this, _transformObj).getResult();
 
-    return new G0(this.newCoordTo).getCode();
+    return new G1(this.newCoordTo).getCode();
   }
 }

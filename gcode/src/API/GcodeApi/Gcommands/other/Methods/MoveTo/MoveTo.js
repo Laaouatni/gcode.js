@@ -1,17 +1,13 @@
 import PositionSpecificy from "../../Specificy/PositionSpecificy.js";
 import DirectionValues from "../../DirectionValues/DirectionValues.js";
+import GcodeAPI from './../../../../GcodeAPI_main/GcodeAPI.js';
 
 export default class MoveTo {
   constructor(_this, _transformObj) {
     this.PositionChoosed = new PositionSpecificy(
       _transformObj,
     ).getChoosedDirection();
-
-    console.log({ posChosed: this.PositionChoosed });
-
-    console.log("this???", _this)
     
-
     this.toX = () => {
       switch(this.PositionChoosed.x) {
         case "left":
@@ -19,11 +15,9 @@ export default class MoveTo {
         case "right":
           return _this.x - new DirectionValues(_transformObj).right;
         default:
-          return _this.x
+          return GcodeAPI.previusX ?? _this.x;
       }
     }
-
-
 
     this.toY = () => {
       switch(this.PositionChoosed.y) {
@@ -32,7 +26,7 @@ export default class MoveTo {
         case "top":
           return _this.y - new DirectionValues(_transformObj).top;
         default:
-          return _this.y
+          return GcodeAPI.previusY ?? _this.y;
       }
     }
 
