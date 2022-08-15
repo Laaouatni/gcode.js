@@ -1,19 +1,40 @@
 import PositionSpecificy from "../../Specificy/PositionSpecificy.js";
-import DirectionValues from '../../DirectionValues/DirectionValues.js';
+import DirectionValues from "../../DirectionValues/DirectionValues.js";
 
-export default class MoveTo{
+export default class MoveTo {
   constructor(_this, _transformObj) {
-    this.toX =
-      new PositionSpecificy(_transformObj).getChoosedDirection().x ===
-      "left"
-        ? _this.x + new DirectionValues(_transformObj).left
-        : _this.x - new DirectionValues(_transformObj).right;
+    this.PositionChoosed = new PositionSpecificy(
+      _transformObj,
+    ).getChoosedDirection();
 
-    this.toY =
-      new PositionSpecificy(_transformObj).getChoosedDirection().y ===
-      "bottom"
-        ? _this.y + new DirectionValues(_transformObj).bottom
-        : _this.y - new DirectionValues(_transformObj).top;
+    console.log({ posChosed: this.PositionChoosed });
+
+    console.log("this???", _this)
+    
+
+    this.toX = () => {
+      switch(this.PositionChoosed.x) {
+        case "left":
+          return _this.x + new DirectionValues(_transformObj).left;
+        case "right":
+          return _this.x - new DirectionValues(_transformObj).right;
+        default:
+          return _this.x
+      }
+    }
+
+
+
+    this.toY = () => {
+      switch(this.PositionChoosed.y) {
+        case "bottom":
+          return _this.y + new DirectionValues(_transformObj).bottom;
+        case "top":
+          return _this.y - new DirectionValues(_transformObj).top;
+        default:
+          return _this.y
+      }
+    }
 
     this.toZ = _transformObj.zIndex
       ? _this.z + _transformObj.zIndex
@@ -22,9 +43,9 @@ export default class MoveTo{
 
   getResult() {
     return {
-      x: this.toX,
-      y: this.toY,
+      x: this.toX(),
+      y: this.toY(),
       z: this.toZ,
-    }
+    };
   }
 }
