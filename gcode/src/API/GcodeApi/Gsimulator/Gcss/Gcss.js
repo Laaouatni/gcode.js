@@ -48,25 +48,28 @@ export default class Gcss extends Gsimulator {
         };
 
         this.lineLength = this.calcolateLength();
-        console.log(this.lineLength)
+        console.log(this.lineLength);
       }
 
       calcolateLength() {
         if (
-          this.currentObj.x === this.previusObj.x &&
-          this.currentObj.y !== this.previusObj.y
+          this.currentObj.y !== this.previusObj.y &&
+          this.currentObj.x === this.previusObj.x
         ) {
           this.sameX = true;
           this.sameY = false;
-          return this.PosDifference.x;
+          return this.PosDifference.y;
         } else if (
-          this.currentObj.y === this.previusObj.y &&
-          this.currentObj.x !== this.previusObj.x
+          this.currentObj.x !== this.previusObj.x &&
+          this.currentObj.y === this.previusObj.y
         ) {
           this.sameY = true;
           this.sameX = false;
-          return this.PosDifference.y;
-        } else {
+          return this.PosDifference.x;
+        } else if (
+          this.currentObj.y !== this.previusObj.y &&
+          this.currentObj.x !== this.previusObj.x
+        ) {
           this.sameX = false;
           this.sameY = false;
           this.notSameXY = true;
@@ -75,6 +78,9 @@ export default class Gcss extends Gsimulator {
             Math.pow(this.PosDifference.x, 2) +
               Math.pow(this.PosDifference.y, 2),
           );
+        } else {
+          // 0 means they aren't moving
+          return 0;
         }
       }
     }
