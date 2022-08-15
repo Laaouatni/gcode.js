@@ -1,5 +1,6 @@
 import Gsimulator from "../Gsimulator.js";
 import GcodeAPI from "../../GcodeAPI_main/GcodeAPI.js";
+import CssLineLength from "./other/Methods/CssLineLength/CssLineLength.js";
 
 export default class Gcss extends Gsimulator {
   constructor(_GcssObj) {
@@ -52,36 +53,7 @@ export default class Gcss extends Gsimulator {
       }
 
       calcolateLength() {
-        if (
-          this.currentObj.y !== this.previusObj.y &&
-          this.currentObj.x === this.previusObj.x
-        ) {
-          this.sameX = true;
-          this.sameY = false;
-          return this.PosDifference.y;
-        } else if (
-          this.currentObj.x !== this.previusObj.x &&
-          this.currentObj.y === this.previusObj.y
-        ) {
-          this.sameY = true;
-          this.sameX = false;
-          return this.PosDifference.x;
-        } else if (
-          this.currentObj.y !== this.previusObj.y &&
-          this.currentObj.x !== this.previusObj.x
-        ) {
-          this.sameX = false;
-          this.sameY = false;
-          this.notSameXY = true;
-          // pitagora's theorem
-          return Math.sqrt(
-            Math.pow(this.PosDifference.x, 2) +
-              Math.pow(this.PosDifference.y, 2),
-          );
-        } else {
-          // 0 means they aren't moving
-          return 0;
-        }
+        return new CssLineLength(this).calcolate();
       }
     }
 
