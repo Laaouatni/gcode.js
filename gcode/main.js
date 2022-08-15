@@ -3,8 +3,6 @@ import G0 from "./src/API/GcodeApi/Gcommands/G/G0";
 
 import Gcanvas from "./src/API/GcodeApi/Gsimulator/Gcanvas";
 
-// new G0({ x: 50 })
-// new G0({ x: 50 })
 
 let a = new G0({ x: 10, y: 10, z: 10 });
 
