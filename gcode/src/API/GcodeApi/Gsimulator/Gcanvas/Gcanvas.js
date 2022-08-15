@@ -1,5 +1,5 @@
-import Gsimulator from "./Gsimulator.js";
-import GcodeAPI from '../GcodeAPI_main/GcodeAPI.js';
+import Gsimulator from "../Gsimulator.js";
+import GcodeAPI from '../../GcodeAPI_main/GcodeAPI.js';
 
 export default class Gcanvas extends Gsimulator {
   constructor(_GcanvasObj) {
