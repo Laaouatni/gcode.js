@@ -31,8 +31,8 @@ export default class MoveTo {
     }
 
     this.toZ = _transformObj.zIndex
-      ? _this.z + _transformObj.zIndex
-      : _this.z ?? 0;
+      ? GcodeAPI.previusZ + _transformObj.zIndex
+      : _this.z;
   }
 
   getResult() {
