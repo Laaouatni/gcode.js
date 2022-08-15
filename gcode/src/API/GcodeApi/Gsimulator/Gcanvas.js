@@ -8,6 +8,7 @@ export default class Gcanvas extends Gsimulator {
     this.width = _GcanvasObj.width || _GcanvasObj.height || 500;
     this.height = _GcanvasObj.height ||  _GcanvasObj.width || 500;
     this.parentHtmlContainer = _GcanvasObj.parentHtmlContainer ?? document.body;
+    this.create();
   }
 
   create() {
@@ -32,13 +33,12 @@ export default class Gcanvas extends Gsimulator {
   }
 
   drawLine(_obj) {
+    console.log("❌", _obj);
     this.ctx.lineTo(_obj.x, _obj.y);
     this.ctx.stroke();
   }
 
   generate() {
-    this.create();
-
     GcodeAPI.array.forEach(pos => {
       this.drawLine(pos)
     })
