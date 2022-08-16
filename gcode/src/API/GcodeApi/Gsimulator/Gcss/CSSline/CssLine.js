@@ -48,7 +48,9 @@ export default class CSSline {
     this.lineStylesObj = {
       width: `${this.lineLength}px`,
       height: `${this.lineHeight}px`,
-      transform: `translate(${this.smallestPos.x}px, ${this.smallestPos.y}px) rotate(${this.lineAngle}deg)`,
+      translateX: `${this.smallestPos.x}px`,
+      translateY: `${this.smallestPos.y}px`,
+      rotate: `${this.lineAngle}deg`,
       backgroundColor: "red",
     };
 
