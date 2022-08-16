@@ -33,7 +33,9 @@ export default class Gcss extends Gsimulator {
   drawLine(_CurrentObj, _index) {
     this.CssLineClass = new CssLine(_CurrentObj, _index);
 
-    this.cssContainer.appendChild(this.CssLineClass.lineElement);
+    if (_index > 0) {
+      this.cssContainer.appendChild(this.CssLineClass.lineElement);
+    }
   }
 
   generate() {

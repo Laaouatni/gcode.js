@@ -17,16 +17,18 @@
         border: 5px solid red;
       }
 
-      section {
+      #gcss {
         outline: 2px solid blue;
       }
 
       .Gline {
+        position: relative;
         transform-origin: top left;
       }
 
-      .Gline:hover {
-        border: 0.5rem solid black;
+      .Gline::before {
+        content: "1";
+        position: absolute;
       }
     </style>
 
