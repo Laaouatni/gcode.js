@@ -56,7 +56,7 @@ export default class CSSline {
     this.stylesValuesArray = Object.values(this.lineStylesObj);
 
     this.stylesKeysArray.forEach((key, index) => {
-      this.lineElement.style[key] = this.stylesValuesArray[index];
+      this.lineElement.style.setProperty(`--line-${key}`, this.stylesValuesArray[index]);
     });
 
     this.lineElement.classList.add("Gline")
