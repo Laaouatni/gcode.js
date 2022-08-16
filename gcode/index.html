@@ -69,6 +69,15 @@
         height: var(--before-width);
         border-radius: 50%;
       }
+
+      .Gline::after {
+        position: absolute;
+        border: 2px solid black;
+        content: attr(data-after);
+        white-space: pre-wrap;
+        pointer-events: none;
+        font-size: calc(var(--line-height) * 2);
+      }
     </style>
 
     <script type="module" src="/main.js"></script>

@@ -26,7 +26,7 @@ export default class CSSline {
     };
 
     this.lineLength = this.calcolateLength();
-    this.lineHeight = this.calcolateHeight(0.2); // 0.2rem 
+    this.lineHeight = this.calcolateHeight(0.2); // 0.2rem
     this.lineAngle = this.calcolateAngle();
 
     this.styleLine();
@@ -56,10 +56,17 @@ export default class CSSline {
     this.stylesValuesArray = Object.values(this.lineStylesObj);
 
     this.stylesKeysArray.forEach((key, index) => {
-      this.lineElement.style.setProperty(`--line-${key}`, this.stylesValuesArray[index]);
+      this.lineElement.style.setProperty(
+        `--line-${key}`,
+        this.stylesValuesArray[index],
+      );
     });
 
-    this.lineElement.classList.add("Gline")
+    this.lineElement.classList.add("Gline");
     this.lineElement.setAttribute("key", this.index);
+    this.lineElement.setAttribute(
+      "data-after",
+      `lenght: ${this.lineLength} \\A x: ${this.currentObj.x} \\A y: ${this.currentObj.y} \\A angle: ${this.lineAngle}`,
+    );
   }
 }
