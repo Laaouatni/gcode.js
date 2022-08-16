@@ -26,8 +26,8 @@ export default class Gcss extends Gsimulator {
   }
 
   changeSize() {
-    this.cssContainer.width = this.width;
-    this.cssContainer.height = this.height;
+    this.cssContainer.style.width  = `${this.width}px`;
+    this.cssContainer.style.height = `${this.height}px`;
   }
 
   drawLine(_CurrentObj, _index) {
