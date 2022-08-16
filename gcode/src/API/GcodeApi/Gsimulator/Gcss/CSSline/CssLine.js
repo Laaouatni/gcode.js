@@ -66,7 +66,7 @@ export default class CSSline {
     this.lineElement.setAttribute("key", this.index);
     this.lineElement.setAttribute(
       "data-after",
-      `lenght: ${this.lineLength} \\A x: ${this.currentObj.x} \\A y: ${this.currentObj.y} \\A angle: ${this.lineAngle}`,
+      `lenght: ${this.lineLength} \n x: ${this.currentObj.x} \n y: ${this.currentObj.y} \n angle: ${this.lineAngle}`,
     );
   }
 }
