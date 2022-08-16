@@ -9,7 +9,10 @@ export default class Gcss extends Gsimulator {
     // TODO: in the future add also possibility to to do 100% width/height
     this.width = _GcssObj.width || _GcssObj.height || 500;
     this.height = _GcssObj.height || _GcssObj.width || 500;
-    this.parentHtmlContainer = _GcssObj.parentHtmlContainer ?? document.body;
+    this.parentHtmlContainer =
+      _GcssObj.parentHtmlContainer ??
+      document.querySelector("#app") ??
+      document.body;
     this.create();
   }
 
@@ -26,7 +29,6 @@ export default class Gcss extends Gsimulator {
   }
 
   drawLine(_CurrentObj, _index) {
-    
     console.log(new CssLine(_CurrentObj, _index));
     // console.log("❌", _CurrentObj);
   }
