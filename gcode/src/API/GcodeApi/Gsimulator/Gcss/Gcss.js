@@ -1,6 +1,7 @@
 import Gsimulator from "../Gsimulator.js";
 import GcodeAPI from "../../GcodeAPI_main/GcodeAPI.js";
 import CssLineLength from "./other/Methods/CssLineLength/CssLineLength.js";
+import CssLineAngle from "./other/Methods/CssLineAngle/CssLineAngle.js";
 
 export default class Gcss extends Gsimulator {
   constructor(_GcssObj) {
@@ -58,15 +59,7 @@ export default class Gcss extends Gsimulator {
       }
 
       calcolateAngle() {
-        if (this.notSameXY) {
-          return Math.asin(this.PosDifference.y / this.lineLength) * 180 / Math.PI;
-        } else if (this.sameY && !this.sameX) {
-          return 0;
-        } else if (this.sameX && !this.sameY) {
-          return 90;
-        } else {
-          return 0;
-        }
+        return new CssLineAngle(this).calcolate();
       }
     }
 
