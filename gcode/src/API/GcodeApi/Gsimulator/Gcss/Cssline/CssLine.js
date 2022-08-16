@@ -2,7 +2,7 @@ import GcodeAPI from "../../../GcodeAPI_main/GcodeAPI.js";
 import CssLineLength from "../other/Methods/CssLineLength/CssLineLength.js";
 import CssLineAngle from "../other/Methods/CssLineAngle/CssLineAngle.js";
 
-export default class CSSline {
+export default class Cssline {
   constructor(_CurrentObj, _index) {
     this.index = _index;
     this.lineElement = document.createElement("div");
