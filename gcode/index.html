@@ -26,31 +26,31 @@
         transform-origin: top left;
       }
 
-      .Gline:hover::before {
-        content: "1";
+      .Gline::before {
+        content: attr(key);
         font-size: 0.5rem;
         font-family: monospace;
       }
 
-      .Gline:hover::before {
+      .Gline::before {
         display: grid;
         place-items: center;
         box-sizing: border-box;
       }
 
-      .Gline:hover::before {
+      .Gline::before {
         position: absolute;
         top: 0;
         left: 0;
         transform: translate(-50%, -40%);
       }
 
-      .Gline:hover::before {
+      .Gline::before {
         background: blue;
         color: white;
       }
 
-      .Gline:hover::before {
+      .Gline::before {
         --before-width: 0.8rem;
         width: var(--before-width);
         height: var(--before-width);

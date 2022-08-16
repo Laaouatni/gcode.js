@@ -4,10 +4,11 @@ import CssLineAngle from "../other/Methods/CssLineAngle/CssLineAngle.js";
 
 export default class CSSline {
   constructor(_CurrentObj, _index) {
+    this.index = _index;
     this.lineElement = document.createElement("div");
 
     this.currentObj = _CurrentObj;
-    this.previusObj = GcodeAPI.array[_index - 1 > 0 ? _index - 1 : 0];
+    this.previusObj = GcodeAPI.array[this.index - 1 > 0 ? this.index - 1 : 0];
 
     this.smallestPos = {
       x: Math.min(this.currentObj.x, this.previusObj.x),
@@ -47,11 +48,9 @@ export default class CSSline {
     this.lineStylesObj = {
       width: `${this.lineLength}px`,
       height: `${this.lineHeight}px`,
-      transform: `translate(${this.smallestPos.x}px, calc(${this.smallestPos.y}px - ${this.lineHeight}px)) rotate(${this.lineAngle}deg)`,
+      transform: `translate(${this.smallestPos.x}px, ${this.smallestPos.y}px) rotate(${this.lineAngle}deg)`,
       backgroundColor: "red",
     };
-
-    console.log(this.lineStylesObj.transform);
 
     this.stylesKeysArray = Object.keys(this.lineStylesObj);
     this.stylesValuesArray = Object.values(this.lineStylesObj);
@@ -61,5 +60,6 @@ export default class CSSline {
     });
 
     this.lineElement.classList.add("Gline")
+    this.lineElement.setAttribute("key", this.index);
   }
 }
