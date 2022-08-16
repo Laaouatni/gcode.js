@@ -7,15 +7,107 @@
     <title>Vite App</title>
   </head>
   <body>
-    <div id="app">hello world</div>
-
-    <section id="hello"></section>
+    <div id="app">
+      <section id="hello"></section>
+    </div>
 
     <style>
-      canvas {
-        border: 5px solid red;
+      /* poppins*/
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+      #gcss {
+        outline: 2px solid blue;
+      }
+
+      .Gline {
+        position: relative;
+        background-color: var(--line-backgroundColor);
+      }
+      
+      .Gline {
+        width: var(--line-width);
+        height: var(--line-height);
+      }
+      
+      .Gline {
+        transform-origin: top left;
+        transform: translate(var(--line-translateX), var(--line-translateY)) rotate(var(--line-rotate));
+      }
+
+      .Gline::before {
+        transition: transform 0.2s;
+      }
+
+      .Gline::before {
+        content: attr(key);
+        font-size: calc(var(--line-height) * 2.5);
+        font-family: monospace;
+      }
+
+      .Gline:hover::before {
+        transform: scale(2) translateY(-25%);
+      }
+
+      .Gline::before {
+        display: grid;
+        place-items: center;
+        box-sizing: border-box;
+      }
+
+      .Gline::before {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translate(-50%, -50%);
+      }
+
+      .Gline::before {
+        background: blue;
+        color: white;
+      }
+
+      .Gline::before {
+        --before-width: calc(var(--line-height) * 3.5);
+        width: var(--before-width);
+        height: var(--before-width);
+        border-radius: 50%;
+      }
+
+      .Gline::after {
+        content: attr(data-after);
+        white-space: pre;
+        padding: 0.5rem;
+      }
+      
+      .Gline::after {
+        --rotate-correction: calc(var(--line-rotate) * -1);
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(0, 0) rotate(var(--rotate-correction));
+        transform-origin: top left;
+      }
+      
+      .Gline::after {
+        font-size: calc(var(--line-height) * 3);
+        background: lightblue;
+        border-radius: 0.5rem;
+        box-shadow: 0 0.2rem 0.2rem 0 rgba(0, 55, 255, 0.2);
+        z-index: 1;
+        font-family: 'Poppins', monospace;
+      }
+
+      .Gline::after {
+        opacity: 0;
+      }
+
+      .Gline:hover::after {
+        opacity: 1;
+        z-index: -1;
       }
     </style>
+
+
     <script type="module" src="/main.js"></script>
   </body>
 </html>

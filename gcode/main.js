@@ -1,21 +1,25 @@
-import GcodeAPI from "./src/API/GcodeApi/GcodeAPI_main/GcodeAPI";
+// import GcodeAPI from "./src/API/GcodeApi/GcodeAPI_main/GcodeAPI";
 import G0 from "./src/API/GcodeApi/Gcommands/G/G0";
 
-import Gcanvas from "./src/API/GcodeApi/Gsimulator/Gcanvas";
+import Gcss from "./src/API/GcodeApi/Gsimulator/Gcss/Gcss.js";
+
+let a = new G0({ x: 10, y: 10 });
+
+a.moveTo({ left: 50, bottom: 20 });
+a.moveTo({ left: 100, bottom: 90 });
+a.moveTo({ bottom: 130 });
 
 
-let a = new G0({ x: 10, y: 10, z: 10 });
 
-console.log(a.moveTo({ left: 100 }));
-console.log(a.moveTo({ bottom: 200 }));
-console.log(a.moveTo({ bottom: 300, left: 300}));
-console.log(a.moveTo({ bottom: 100, left: 200, zIndex: -100 }));
-console.log(a.moveTo({ bottom: 300, left: 200, zIndex: -20}));
-
-let g = new Gcanvas({
-  width: 0,
+let g = new Gcss({
+  width: 500,
   height: 400,
   parentHtmlContainer: document.querySelector("section"),
 });
 
-g.generate();
+g.generate()
+
+console.log(g)
+
+
+
