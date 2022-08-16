@@ -48,12 +48,25 @@ export default class Gcss extends Gsimulator {
           y: this.biggestPos.y - this.smallestPos.y,
         };
 
-        this.lineLength = this.calcolateLength();
-        console.log(this.lineLength);
+        this.lineLength = this.calcolateLength();  
+        console.log(this.calcolateAngle());
+        // console.log(this.lineLength);
       }
 
       calcolateLength() {
         return new CssLineLength(this).calcolate();
+      }
+
+      calcolateAngle() {
+        if (this.notSameXY) {
+          return Math.asin(this.PosDifference.y / this.lineLength) * 180 / Math.PI;
+        } else if (this.sameY && !this.sameX) {
+          return 0;
+        } else if (this.sameX && !this.sameY) {
+          return 90;
+        } else {
+          return 0;
+        }
       }
     }
 

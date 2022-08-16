@@ -31,6 +31,9 @@ export default class CssLineLength {
           Math.pow(this.obj.PosDifference.y, 2),
       );
     } else {
+      this.obj.sameX = true;
+      this.obj.sameY = true;
+      this.obj.notSameXY = false;
       // 0 means they aren't moving
       return 0;
     }
