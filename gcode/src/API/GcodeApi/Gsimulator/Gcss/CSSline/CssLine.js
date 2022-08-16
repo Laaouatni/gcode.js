@@ -25,6 +25,7 @@ export default class CSSline {
     };
 
     this.lineLength = this.calcolateLength();
+    this.lineHeight = this.calcolateHeight(0.2); // 0.2rem 
     this.lineAngle = this.calcolateAngle();
 
     this.styleLine();
@@ -38,13 +39,19 @@ export default class CSSline {
     return new CssLineAngle(this).calcolate();
   }
 
+  calcolateHeight(remValue) {
+    return remValue * 16;
+  }
+
   styleLine() {
     this.lineStylesObj = {
       width: `${this.lineLength}px`,
-      height: `0.2rem`,
-      transform: `translate(${this.smallestPos.x}px, ${this.smallestPos.y}px) rotate(${this.lineAngle}deg)`,
+      height: `${this.lineHeight}px`,
+      transform: `translate(${this.smallestPos.x}px, calc(${this.smallestPos.y}px - ${this.lineHeight}px)) rotate(${this.lineAngle}deg)`,
       backgroundColor: "red",
     };
+
+    console.log(this.lineStylesObj.transform);
 
     this.stylesKeysArray = Object.keys(this.lineStylesObj);
     this.stylesValuesArray = Object.values(this.lineStylesObj);
