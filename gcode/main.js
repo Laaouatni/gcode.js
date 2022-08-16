@@ -21,5 +21,7 @@ let g = new Gcss({
 
 g.generate()
 
+console.log(g)
+
 
 

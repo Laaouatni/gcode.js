@@ -13,6 +13,7 @@ export default class Gcss extends Gsimulator {
       _GcssObj.parentHtmlContainer ??
       document.querySelector("#app") ??
       document.body;
+    
     this.create();
   }
 
@@ -20,6 +21,7 @@ export default class Gcss extends Gsimulator {
     this.cssContainer = document.createElement("div");
     this.cssContainer.id = "gcss";
     this.parentHtmlContainer.appendChild(this.cssContainer);
+    
     this.changeSize();
   }
 
@@ -29,8 +31,9 @@ export default class Gcss extends Gsimulator {
   }
 
   drawLine(_CurrentObj, _index) {
-    console.log(new CssLine(_CurrentObj, _index));
-    // console.log("❌", _CurrentObj);
+    this.CssLineClass = new CssLine(_CurrentObj, _index);
+
+    this.cssContainer.appendChild(this.CssLineClass.lineElement);
   }
 
   generate() {
