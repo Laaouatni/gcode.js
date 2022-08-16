@@ -1,7 +1,6 @@
 import Gsimulator from "../Gsimulator.js";
 import GcodeAPI from "../../GcodeAPI_main/GcodeAPI.js";
-import CssLineLength from "./other/Methods/CssLineLength/CssLineLength.js";
-import CssLineAngle from "./other/Methods/CssLineAngle/CssLineAngle.js";
+import CssLine from "./CssLine/CssLine.js";
 
 export default class Gcss extends Gsimulator {
   constructor(_GcssObj) {
@@ -27,43 +26,8 @@ export default class Gcss extends Gsimulator {
   }
 
   drawLine(_CurrentObj, _index) {
-    class Line {
-      constructor() {
-        this.lineElement = document.createElement("div");
-
-        this.currentObj = _CurrentObj;
-        this.previusObj = GcodeAPI.array[_index - 1 > 0 ? _index - 1 : 0];
-
-        this.smallestPos = {
-          x: Math.min(this.currentObj.x, this.previusObj.x),
-          y: Math.min(this.currentObj.y, this.previusObj.y),
-        };
-
-        this.biggestPos = {
-          x: Math.max(this.currentObj.x, this.previusObj.x),
-          y: Math.max(this.currentObj.y, this.previusObj.y),
-        };
-
-        this.PosDifference = {
-          x: this.biggestPos.x - this.smallestPos.x,
-          y: this.biggestPos.y - this.smallestPos.y,
-        };
-
-        this.lineLength = this.calcolateLength();  
-        console.log(this.calcolateAngle());
-        // console.log(this.lineLength);
-      }
-
-      calcolateLength() {
-        return new CssLineLength(this).calcolate();
-      }
-
-      calcolateAngle() {
-        return new CssLineAngle(this).calcolate();
-      }
-    }
-
-    console.log(new Line());
+    
+    console.log(new CssLine(_CurrentObj, _index));
     // console.log("❌", _CurrentObj);
   }
 
