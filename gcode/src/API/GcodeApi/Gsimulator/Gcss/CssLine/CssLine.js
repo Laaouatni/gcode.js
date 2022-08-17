@@ -1,7 +1,7 @@
 import GcodeAPI from "../../../GcodeAPI_main/GcodeAPI.js";
 import CssLineLength from "../other/Methods/CssLineLength/CssLineLength.js";
 import CssLineAngle from "../other/Methods/CssLineAngle/CssLineAngle.js";
-
+import CssFloatPopup from "../CssFloatPopup/CssFloatPopup.js";
 export default class CssLine {
   constructor(_CurrentObj, _index) {
     this.index = _index;
@@ -30,6 +30,10 @@ export default class CssLine {
     this.lineAngle = this.calcolateAngle();
 
     this.styleLine();
+    this.createPopup({
+      button: this.lineElement,
+      popup: document.querySelector("#tooltip")
+    });
   }
 
   calcolateLength() {
@@ -72,7 +76,7 @@ export default class CssLine {
     );
   }
 
-  createPopup() {
-    
+  createPopup(_obj) {
+    this.popupClass = new CssFloatPopup(_obj);
   }
 }

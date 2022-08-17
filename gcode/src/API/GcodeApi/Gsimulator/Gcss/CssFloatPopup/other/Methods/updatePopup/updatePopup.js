@@ -1,10 +1,9 @@
-import { computePosition, flip, shift, offset, arrow } from "@floating-ui/dom";
+import { computePosition, shift, offset, arrow, autoPlacement } from "@floating-ui/dom";
 
 export default function updatePopup(_this) {
   computePosition(_this.button, _this.popup, {
-    placement: "top",
     middleware: [
-      flip(),
+      autoPlacement(),
       shift({ padding: 8 }),
       offset(8),
       arrow({ element: _this.arrow }),

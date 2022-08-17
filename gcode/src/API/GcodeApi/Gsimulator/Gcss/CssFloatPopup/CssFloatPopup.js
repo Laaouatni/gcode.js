@@ -20,7 +20,7 @@ export default class CssFloatPopup {
 
   showPopup() {
     this.popup.style.display = "block";
-    updatePopup(this.obj);
+    updatePopup(this);
   }
 
   addEvents() {
