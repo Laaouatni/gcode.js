@@ -5,11 +5,15 @@ import Gcss from "./src/API/GcodeApi/Gsimulator/Gcss/Gcss.js";
 
 let a = new G0({ x: 10, y: 10 });
 
-a.moveTo({ left: 50, bottom: 20 });
-a.moveTo({ left: 100, bottom: 90 });
-a.moveTo({ bottom: 130 });
+a.moveTo({ left: 50});
+a.moveTo({ left: 100 })
+a.moveTo({left: 200})
 
+// 10, 10. 0
 
+// 60, 10
+
+// 160, -80
 
 let g = new Gcss({
   width: 500,

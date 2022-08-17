@@ -7,26 +7,29 @@ export default class MoveTo {
     this.PositionChoosed = new PositionSpecificy(
       _transformObj,
     ).getChoosedDirection();
+
+    this.previusX = GcodeAPI.previusX ?? _this.x;
+    this.previusY = GcodeAPI.previusY ?? _this.y;
     
     this.toX = () => {
-      switch(this.PositionChoosed.x) {
+      switch (this.PositionChoosed.x) {
         case "left":
-          return _this.x + new DirectionValues(_transformObj).left;
+          return this.previusX + new DirectionValues(_transformObj).left;
         case "right":
-          return _this.x - new DirectionValues(_transformObj).right;
+          return this.previusX - new DirectionValues(_transformObj).right;
         default:
-          return GcodeAPI.previusX ?? _this.x;
+          return this.previusX;
       }
     }
 
     this.toY = () => {
       switch(this.PositionChoosed.y) {
         case "bottom":
-          return _this.y + new DirectionValues(_transformObj).bottom;
+          return this.previusY - new DirectionValues(_transformObj).bottom;
         case "top":
-          return _this.y - new DirectionValues(_transformObj).top;
+          return this.previusY + new DirectionValues(_transformObj).top;
         default:
-          return GcodeAPI.previusY ?? _this.y;
+          return this.previusY;
       }
     }
 

@@ -2,7 +2,7 @@ import GcodeAPI from "../../../GcodeAPI_main/GcodeAPI.js";
 import CssLineLength from "../other/Methods/CssLineLength/CssLineLength.js";
 import CssLineAngle from "../other/Methods/CssLineAngle/CssLineAngle.js";
 
-export default class Cssline {
+export default class CssLine {
   constructor(_CurrentObj, _index) {
     this.index = _index;
     this.lineElement = document.createElement("div");
@@ -48,8 +48,8 @@ export default class Cssline {
     this.lineStylesObj = {
       width: `${this.lineLength}px`,
       height: `${this.lineHeight}px`,
-      translateX: `${this.smallestPos.x}px`,
-      translateY: `${this.smallestPos.y}px`,
+      left: `${this.smallestPos.x}px`,
+      top: `${this.smallestPos.y}px`,
       rotate: `${this.lineAngle}deg`,
       backgroundColor: "red",
     };

@@ -17,10 +17,11 @@
 
       #gcss {
         outline: 2px solid blue;
+        position: relative;
       }
 
       .Gline {
-        position: relative;
+        position: absolute;
         background-color: var(--line-backgroundColor);
       }
       
@@ -28,10 +29,17 @@
         width: var(--line-width);
         height: var(--line-height);
       }
+
+      /* .Gline:nth-child(1) {
+        --line-0-translateY: calc(var(--line-translateY) + var(--line-height));
+        transform: translate(var(--line-translateX), var(--line-0-translateY)) rotate(var(--line-rotate));
+      } */
       
       .Gline {
         transform-origin: top left;
-        transform: translate(var(--line-translateX), var(--line-translateY)) rotate(var(--line-rotate));
+        top: var(--line-top);
+        left: var(--line-left);
+        transform: rotate(var(--line-rotate));
       }
 
       .Gline::before {
@@ -57,8 +65,9 @@
       .Gline::before {
         position: absolute;
         top: 50%;
-        left: 0;
-        transform: translate(-50%, -50%);
+        right: 0;
+        transform: translate(0, -50%);
+        z-index: 5 !important;
       }
 
       .Gline::before {
@@ -83,8 +92,8 @@
         --rotate-correction: calc(var(--line-rotate) * -1);
         position: absolute;
         top: 0;
-        left: 0;
-        transform: translate(0, 0) rotate(var(--rotate-correction));
+        right: 0;
+        transform: rotate(var(--rotate-correction));
         transform-origin: top left;
       }
       
