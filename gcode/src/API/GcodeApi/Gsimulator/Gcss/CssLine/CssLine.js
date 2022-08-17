@@ -70,6 +70,5 @@ export default class CssLine {
       "data-after",
       `lenght: ${this.lineLength} \n x: ${this.currentObj.x} \n y: ${this.currentObj.y} \n angle: ${this.lineAngle}`,
     );
-    
   }
 }
