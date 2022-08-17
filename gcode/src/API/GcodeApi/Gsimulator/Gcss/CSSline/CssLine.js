@@ -48,12 +48,10 @@ export default class CSSline {
     this.lineStylesObj = {
       width: `${this.lineLength}px`,
       height: `${this.lineHeight}px`,
-      translateX: `${this.smallestPos.x}px`,
-      translateY: `${this.smallestPos.y}px`,
+      left: `${this.smallestPos.x}px`,
+      top: `${this.smallestPos.y}px`,
       rotate: `${this.lineAngle}deg`,
       backgroundColor: "red",
-      bigX: `${this.biggestPos.x}px`,
-      bigY: `${this.biggestPos.y}px`,
     };
 
     this.stylesKeysArray = Object.keys(this.lineStylesObj);
