@@ -1,8 +1,6 @@
 import { computePosition, flip, shift, offset, arrow } from "@floating-ui/dom";
 
 export default function updatePopup(_this) {
-console.log("aaa")
-
   computePosition(_this.button, _this.popup, {
     placement: "top",
     middleware: [
