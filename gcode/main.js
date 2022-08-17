@@ -1,10 +1,10 @@
 import CssFloatPopup from "./src/API/GcodeApi/Gsimulator/Gcss/CssFloatPopup/CssFloatPopup";
 
-new CssFloatPopup({
+console.log(new CssFloatPopup({
   button: document.querySelector("#button"),
   popup: document.querySelector("#tooltip"),
   arrow: document.querySelector("#arrow"),
-});
+}));
 
 // // import GcodeAPI from "./src/API/GcodeApi/GcodeAPI_main/GcodeAPI";
 // import G0 from "./src/API/GcodeApi/Gcommands/G/G0";

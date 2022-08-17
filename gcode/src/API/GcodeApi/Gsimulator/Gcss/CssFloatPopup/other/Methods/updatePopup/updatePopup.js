@@ -1,6 +1,8 @@
 import { computePosition, flip, shift, offset, arrow } from "@floating-ui/dom";
 
 export default function updatePopup(_this) {
+console.log("aaa")
+
   computePosition(_this.button, _this.popup, {
     placement: "top",
     middleware: [
@@ -32,6 +34,4 @@ export default function updatePopup(_this) {
       [staticSide]: "-4px",
     });
   });
-
-  console.log("a")
 }

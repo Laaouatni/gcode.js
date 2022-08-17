@@ -1,38 +1,36 @@
-import updatePopup from './other/Methods/updatePopup/updatePopup';
+import updatePopup from "./other/Methods/updatePopup/updatePopup";
 
 export default class CssFloatPopup {
   constructor(_obj) {
     this.obj = _obj;
 
-    console.log(this.obj)
-
-    this.button = _obj.button;
-    this.popup = _obj.popup;
-    this.arrow = _obj.arrow ?? _obj.popup.querySelector("#arrow");
+    this.button = this.obj.button;
+    this.popup = this.obj.popup;
+    this.arrow = this.obj.arrow ?? this.obj.popup.querySelector("#arrow");
 
     this.addEvents();
-  }
-
-  update() {
-    updatePopup(this.obj);
-  }
-
-  showPopup() {
-    this.popup.style.display = "block";
   }
 
   hidePopup() {
     this.popup.style.display = "none";
   }
 
+  showPopup() {
+    this.popup.style.display = "block";
+    updatePopup(this.obj);
+  }
+
   addEvents() {
-    [
-      ["mouseenter", this.showPopup],
-      ["focus", this.showPopup],
-      ["mouseleave", this.hidePopup],
-      ["blur", this.hidePopup],
-    ].forEach(([event, listener]) => {
-      this.button.addEventListener(event, listener);
+    this.button.addEventListener("mouseenter", () => {
+      this.showPopup();
     });
+
+    this.button.addEventListener("mouseleave", () => {
+      this.hidePopup();
+    });
+  }
+
+  addDefaultStyles() {
+    // TODO: finish from here (create obj with styles then add them with forloop)
   }
 }
