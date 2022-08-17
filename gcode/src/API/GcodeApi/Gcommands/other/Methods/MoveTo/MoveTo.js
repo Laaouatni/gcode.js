@@ -25,9 +25,9 @@ export default class MoveTo {
     this.toY = () => {
       switch(this.PositionChoosed.y) {
         case "bottom":
-          return this.previusY + new DirectionValues(_transformObj).bottom;
+          return this.previusY - new DirectionValues(_transformObj).bottom;
         case "top":
-          return this.previusY - new DirectionValues(_transformObj).top;
+          return this.previusY + new DirectionValues(_transformObj).top;
         default:
           return this.previusY;
       }
