@@ -6,7 +6,8 @@ import Gcss from "./src/API/GcodeApi/Gsimulator/Gcss/Gcss.js";
 let a = new G0({ x: 10, y: 10 });
 
 a.moveTo({ left: 50});
-a.moveTo({ left: 100, bottom: 90 });
+a.moveTo({ left: 100 })
+a.moveTo({left: 200})
 
 // 10, 10. 0
 
