@@ -8,10 +8,7 @@ export default class CssFloatPopup {
     this.popup = this.obj.popup;
     this.arrow =
       this.obj.arrow ??
-      this.obj.popup.querySelector("#arrow") ??
-      this.popup.appendChild(
-        document.createElement("div")
-      ).classList.add("arrow");
+      this.obj.popup.querySelector("#arrow");
 
     this.addDefaultStyles();
     this.addEvents();
@@ -55,10 +52,9 @@ export default class CssFloatPopup {
   styleArrow() {
     this.arrowStylesToAdd = {
       position: "absolute",
-      top: "8px",
-      left: "8px",
+      width: "8px",
+      height: "8px",
       transform: "rotate(45deg)",
-      backgroundColor: "red",
     };
 
     this.arrowKeysArray = Object.keys(this.arrowStylesToAdd);
