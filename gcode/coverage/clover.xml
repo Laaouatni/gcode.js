@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1660565571253" clover="3.2.0">
-  <project timestamp="1660565571253" name="All files">
-    <metrics statements="178" coveredstatements="178" conditionals="50" coveredconditionals="49" methods="21" coveredmethods="21" elements="249" coveredelements="248" complexity="0" loc="178" ncloc="178" packages="7" files="8" classes="8"/>
+<coverage generated="1660825931593" clover="3.2.0">
+  <project timestamp="1660825931594" name="All files">
+    <metrics statements="185" coveredstatements="185" conditionals="50" coveredconditionals="50" methods="21" coveredmethods="21" elements="256" coveredelements="256" complexity="0" loc="185" ncloc="185" packages="7" files="8" classes="8"/>
     <package name="GcodeAPI_main">
       <metrics statements="13" coveredstatements="13" conditionals="3" coveredconditionals="3" methods="3" coveredmethods="3"/>
-      <file name="GcodeAPI.js" path="C:\Users\laaou\Desktop\gcode.js-3\gcode\src\API\GcodeApi\GcodeAPI_main\GcodeAPI.js">
+      <file name="GcodeAPI.js" path="C:\Users\laaou\Desktop\gcode.js-4\gcode\src\API\GcodeApi\GcodeAPI_main\GcodeAPI.js">
         <metrics statements="13" coveredstatements="13" conditionals="3" coveredconditionals="3" methods="3" coveredmethods="3"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -22,9 +22,9 @@
       </file>
     </package>
     <package name="GcodeAPI_main.other.Methods">
-      <metrics statements="16" coveredstatements="16" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
-      <file name="PushGclassesToArray.js" path="C:\Users\laaou\Desktop\gcode.js-3\gcode\src\API\GcodeApi\GcodeAPI_main\other\Methods\PushGclassesToArray.js">
-        <metrics statements="16" coveredstatements="16" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
+      <metrics statements="18" coveredstatements="18" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
+      <file name="PushGclassesToArray.js" path="C:\Users\laaou\Desktop\gcode.js-4\gcode\src\API\GcodeApi\GcodeAPI_main\other\Methods\PushGclassesToArray.js">
+        <metrics statements="18" coveredstatements="18" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -32,20 +32,22 @@
         <line num="5" count="162" type="stmt"/>
         <line num="6" count="162" type="stmt"/>
         <line num="7" count="162" type="stmt"/>
-        <line num="8" count="1" type="stmt"/>
-        <line num="9" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="10" count="162" type="cond" truecount="1" falsecount="0"/>
-        <line num="11" count="162" type="stmt"/>
-        <line num="12" count="159" type="cond" truecount="1" falsecount="0"/>
-        <line num="13" count="159" type="stmt"/>
-        <line num="14" count="162" type="stmt"/>
-        <line num="15" count="162" type="stmt"/>
-        <line num="16" count="1" type="stmt"/>
+        <line num="8" count="162" type="stmt"/>
+        <line num="9" count="162" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="12" count="162" type="cond" truecount="1" falsecount="0"/>
+        <line num="13" count="162" type="stmt"/>
+        <line num="14" count="159" type="cond" truecount="1" falsecount="0"/>
+        <line num="15" count="159" type="stmt"/>
+        <line num="16" count="162" type="stmt"/>
+        <line num="17" count="162" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
       </file>
     </package>
     <package name="Gcommands">
       <metrics statements="24" coveredstatements="24" conditionals="9" coveredconditionals="9" methods="3" coveredmethods="3"/>
-      <file name="Gcommands.js" path="C:\Users\laaou\Desktop\gcode.js-3\gcode\src\API\GcodeApi\Gcommands\Gcommands.js">
+      <file name="Gcommands.js" path="C:\Users\laaou\Desktop\gcode.js-4\gcode\src\API\GcodeApi\Gcommands\Gcommands.js">
         <metrics statements="24" coveredstatements="24" conditionals="9" coveredconditionals="9" methods="3" coveredmethods="3"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -75,7 +77,7 @@
     </package>
     <package name="Gcommands.G">
       <metrics statements="30" coveredstatements="30" conditionals="4" coveredconditionals="4" methods="4" coveredmethods="4"/>
-      <file name="G0.js" path="C:\Users\laaou\Desktop\gcode.js-3\gcode\src\API\GcodeApi\Gcommands\G\G0.js">
+      <file name="G0.js" path="C:\Users\laaou\Desktop\gcode.js-4\gcode\src\API\GcodeApi\Gcommands\G\G0.js">
         <metrics statements="15" coveredstatements="15" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -93,7 +95,7 @@
         <line num="14" count="15" type="stmt"/>
         <line num="15" count="1" type="stmt"/>
       </file>
-      <file name="G1.js" path="C:\Users\laaou\Desktop\gcode.js-3\gcode\src\API\GcodeApi\Gcommands\G\G1.js">
+      <file name="G1.js" path="C:\Users\laaou\Desktop\gcode.js-4\gcode\src\API\GcodeApi\Gcommands\G\G1.js">
         <metrics statements="15" coveredstatements="15" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -114,7 +116,7 @@
     </package>
     <package name="Gcommands.other.DirectionValues">
       <metrics statements="11" coveredstatements="11" conditionals="5" coveredconditionals="5" methods="1" coveredmethods="1"/>
-      <file name="DirectionValues.js" path="C:\Users\laaou\Desktop\gcode.js-3\gcode\src\API\GcodeApi\Gcommands\other\DirectionValues\DirectionValues.js">
+      <file name="DirectionValues.js" path="C:\Users\laaou\Desktop\gcode.js-4\gcode\src\API\GcodeApi\Gcommands\other\DirectionValues\DirectionValues.js">
         <metrics statements="11" coveredstatements="11" conditionals="5" coveredconditionals="5" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="cond" truecount="1" falsecount="0"/>
@@ -130,9 +132,9 @@
       </file>
     </package>
     <package name="Gcommands.other.Methods.MoveTo">
-      <metrics statements="45" coveredstatements="45" conditionals="14" coveredconditionals="13" methods="4" coveredmethods="4"/>
-      <file name="MoveTo.js" path="C:\Users\laaou\Desktop\gcode.js-3\gcode\src\API\GcodeApi\Gcommands\other\Methods\MoveTo\MoveTo.js">
-        <metrics statements="45" coveredstatements="45" conditionals="14" coveredconditionals="13" methods="4" coveredmethods="4"/>
+      <metrics statements="50" coveredstatements="50" conditionals="14" coveredconditionals="14" methods="4" coveredmethods="4"/>
+      <file name="MoveTo.js" path="C:\Users\laaou\Desktop\gcode.js-4\gcode\src\API\GcodeApi\Gcommands\other\Methods\MoveTo\MoveTo.js">
+        <metrics statements="50" coveredstatements="50" conditionals="14" coveredconditionals="14" methods="4" coveredmethods="4"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -143,46 +145,51 @@
         <line num="8" count="65" type="stmt"/>
         <line num="9" count="65" type="stmt"/>
         <line num="10" count="65" type="stmt"/>
-        <line num="11" count="65" type="cond" truecount="1" falsecount="0"/>
+        <line num="11" count="65" type="stmt"/>
         <line num="12" count="65" type="stmt"/>
         <line num="13" count="65" type="cond" truecount="1" falsecount="0"/>
-        <line num="14" count="13" type="stmt"/>
-        <line num="15" count="65" type="cond" truecount="1" falsecount="0"/>
-        <line num="16" count="13" type="stmt"/>
-        <line num="17" count="65" type="cond" truecount="1" falsecount="0"/>
-        <line num="18" count="39" type="cond" truecount="0" falsecount="1"/>
-        <line num="19" count="65" type="stmt"/>
-        <line num="20" count="65" type="stmt"/>
-        <line num="21" count="65" type="stmt"/>
+        <line num="14" count="65" type="cond" truecount="1" falsecount="0"/>
+        <line num="15" count="65" type="stmt"/>
+        <line num="16" count="65" type="cond" truecount="1" falsecount="0"/>
+        <line num="17" count="65" type="stmt"/>
+        <line num="18" count="65" type="cond" truecount="1" falsecount="0"/>
+        <line num="19" count="13" type="stmt"/>
+        <line num="20" count="65" type="cond" truecount="1" falsecount="0"/>
+        <line num="21" count="13" type="stmt"/>
         <line num="22" count="65" type="cond" truecount="1" falsecount="0"/>
-        <line num="23" count="65" type="stmt"/>
-        <line num="24" count="65" type="cond" truecount="1" falsecount="0"/>
-        <line num="25" count="13" type="stmt"/>
-        <line num="26" count="65" type="cond" truecount="1" falsecount="0"/>
-        <line num="27" count="13" type="stmt"/>
-        <line num="28" count="65" type="cond" truecount="1" falsecount="0"/>
-        <line num="29" count="39" type="cond" truecount="1" falsecount="0"/>
-        <line num="30" count="65" type="stmt"/>
-        <line num="31" count="65" type="stmt"/>
-        <line num="32" count="65" type="stmt"/>
-        <line num="33" count="65" type="stmt"/>
-        <line num="34" count="65" type="cond" truecount="1" falsecount="0"/>
-        <line num="35" count="65" type="cond" truecount="1" falsecount="0"/>
+        <line num="23" count="39" type="stmt"/>
+        <line num="24" count="65" type="stmt"/>
+        <line num="25" count="65" type="stmt"/>
+        <line num="26" count="65" type="stmt"/>
+        <line num="27" count="65" type="cond" truecount="1" falsecount="0"/>
+        <line num="28" count="65" type="stmt"/>
+        <line num="29" count="65" type="cond" truecount="1" falsecount="0"/>
+        <line num="30" count="13" type="stmt"/>
+        <line num="31" count="65" type="cond" truecount="1" falsecount="0"/>
+        <line num="32" count="13" type="stmt"/>
+        <line num="33" count="65" type="cond" truecount="1" falsecount="0"/>
+        <line num="34" count="39" type="stmt"/>
+        <line num="35" count="65" type="stmt"/>
         <line num="36" count="65" type="stmt"/>
-        <line num="37" count="1" type="stmt"/>
-        <line num="38" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="39" count="65" type="stmt"/>
-        <line num="40" count="65" type="stmt"/>
+        <line num="37" count="65" type="stmt"/>
+        <line num="38" count="65" type="stmt"/>
+        <line num="39" count="65" type="cond" truecount="1" falsecount="0"/>
+        <line num="40" count="65" type="cond" truecount="1" falsecount="0"/>
         <line num="41" count="65" type="stmt"/>
-        <line num="42" count="65" type="stmt"/>
-        <line num="43" count="65" type="stmt"/>
+        <line num="42" count="1" type="stmt"/>
+        <line num="43" count="1" type="cond" truecount="1" falsecount="0"/>
         <line num="44" count="65" type="stmt"/>
-        <line num="45" count="1" type="stmt"/>
+        <line num="45" count="65" type="stmt"/>
+        <line num="46" count="65" type="stmt"/>
+        <line num="47" count="65" type="stmt"/>
+        <line num="48" count="65" type="stmt"/>
+        <line num="49" count="65" type="stmt"/>
+        <line num="50" count="1" type="stmt"/>
       </file>
     </package>
     <package name="Gcommands.other.Specificy">
       <metrics statements="39" coveredstatements="39" conditionals="11" coveredconditionals="11" methods="4" coveredmethods="4"/>
-      <file name="PositionSpecificy.js" path="C:\Users\laaou\Desktop\gcode.js-3\gcode\src\API\GcodeApi\Gcommands\other\Specificy\PositionSpecificy.js">
+      <file name="PositionSpecificy.js" path="C:\Users\laaou\Desktop\gcode.js-4\gcode\src\API\GcodeApi\Gcommands\other\Specificy\PositionSpecificy.js">
         <metrics statements="39" coveredstatements="39" conditionals="11" coveredconditionals="11" methods="4" coveredmethods="4"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="cond" truecount="1" falsecount="0"/>

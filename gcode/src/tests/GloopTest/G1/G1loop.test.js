@@ -4,8 +4,8 @@ let Ntimes = 10;
 
 leftLoop();
 rightLoop();
-bottomLoop();
 topLoop();
+bottomLoop();
 zIndexLoop();
 
 function leftLoop() {
@@ -36,12 +36,12 @@ function rightLoop() {
   }
 }
 
-function bottomLoop() {
+function topLoop() {
   for (let i = 0; i < Ntimes; i++) {
     let y = new G1({});
 
     y.moveTo({
-      bottom: 10,
+      top: 10,
     });
 
     test(`G1 Y bottom loop ${i}`, () => {
@@ -50,13 +50,13 @@ function bottomLoop() {
   }
 }
 
-function topLoop() {
+function bottomLoop() {
   // top
   for (let i = 0; i < Ntimes; i++) {
     let y = new G1({});
 
     y.moveTo({
-      top: 10,
+      bottom: 10,
     });
 
     test(`G1 Y top loop ${i}`, () => {
