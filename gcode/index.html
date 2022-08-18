@@ -22,17 +22,17 @@
       @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
       #tooltip {
-        border: 2px solid red;
-        padding: 0.2rem;
-        border-radius: 0.5rem;
-        background-color: white;
-        z-index: 2;
+        padding: 0.5rem;
       }
 
-      #arrow {
-        background-color: red;
-        z-index: -1;
+      #tooltip, #arrow {
+        --sky-50: #f0f9ff;
+        --sky-200: #bae6fd;
+        border: 0.1rem solid var(--sky-200);
+        background-color: var(--sky-50);
+        border-radius: 0.2rem;
       }
+
 
       #gcss {
         outline: 2px solid blue;

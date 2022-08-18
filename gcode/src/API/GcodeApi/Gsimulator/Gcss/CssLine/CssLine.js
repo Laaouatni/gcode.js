@@ -6,6 +6,7 @@ export default class CssLine {
   constructor(_CurrentObj, _index) {
     this.index = _index;
     this.lineElement = document.createElement("div");
+    this.popupEl = document.querySelector("#tooltip");
 
     this.currentObj = _CurrentObj;
     this.previusObj = GcodeAPI.array[this.index - 1 > 0 ? this.index - 1 : 0];
@@ -30,9 +31,10 @@ export default class CssLine {
     this.lineAngle = this.calcolateAngle();
 
     this.styleLine();
+    
     this.createPopup({
       button: this.lineElement,
-      popup: document.querySelector("#tooltip")
+      popup: this.popupEl
     });
   }
 

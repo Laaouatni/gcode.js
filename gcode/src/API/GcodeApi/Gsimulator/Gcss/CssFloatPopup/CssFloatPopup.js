@@ -6,9 +6,7 @@ export default class CssFloatPopup {
 
     this.button = this.obj.button;
     this.popup = this.obj.popup;
-    this.arrow =
-      this.obj.arrow ??
-      this.obj.popup.querySelector("#arrow");
+    this.arrow = this.obj.arrow ?? this.obj.popup.querySelector("#arrow");
 
     this.addDefaultStyles();
     this.addEvents();
@@ -20,6 +18,9 @@ export default class CssFloatPopup {
 
   showPopup() {
     this.popup.style.display = "block";
+    this.popup.querySelector(
+      "span",
+    ).textContent = `${this.button.dataset.after}`;
     updatePopup(this);
   }
 
@@ -55,6 +56,7 @@ export default class CssFloatPopup {
       width: "8px",
       height: "8px",
       transform: "rotate(45deg)",
+      "z-index": -1,
     };
 
     this.arrowKeysArray = Object.keys(this.arrowStylesToAdd);
