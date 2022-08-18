@@ -1,11 +1,12 @@
 import GcodeAPI from "../../../GcodeAPI_main/GcodeAPI.js";
 import CssLineLength from "../other/Methods/CssLineLength/CssLineLength.js";
 import CssLineAngle from "../other/Methods/CssLineAngle/CssLineAngle.js";
-
+import CssFloatPopup from "../CssFloatPopup/CssFloatPopup.js";
 export default class CssLine {
   constructor(_CurrentObj, _index) {
     this.index = _index;
     this.lineElement = document.createElement("div");
+    this.popupEl = document.querySelector("#tooltip");
 
     this.currentObj = _CurrentObj;
     this.previusObj = GcodeAPI.array[this.index - 1 > 0 ? this.index - 1 : 0];
@@ -30,6 +31,12 @@ export default class CssLine {
     this.lineAngle = this.calcolateAngle();
 
     this.styleLine();
+    
+    this.createPopup({
+      button: this.lineElement,
+      popup: this.popupEl
+    });
+
   }
 
   calcolateLength() {
@@ -68,7 +75,16 @@ export default class CssLine {
     this.lineElement.setAttribute("key", this.index);
     this.lineElement.setAttribute(
       "data-after",
-      `lenght: ${this.lineLength} \n x: ${this.currentObj.x} \n y: ${this.currentObj.y} \n angle: ${this.lineAngle}`,
+      `${JSON.stringify({
+        length: this.lineLength,
+        x: this.currentObj.x,
+        y: this.currentObj.y,
+        angle: this.currentObj.angle
+      }, null, 2)}`
     );
+  }
+
+  createPopup(_obj) {
+    this.popupClass = new CssFloatPopup(_obj);
   }
 }

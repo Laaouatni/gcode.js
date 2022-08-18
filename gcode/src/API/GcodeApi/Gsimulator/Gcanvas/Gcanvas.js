@@ -36,7 +36,6 @@ export default class Gcanvas extends Gsimulator {
   }
 
   drawLine(_obj) {
-    console.log("❌", _obj);
     this.ctx.lineTo(_obj.x, _obj.y);
     this.ctx.stroke();
   }

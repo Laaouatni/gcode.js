@@ -8,12 +8,32 @@
   </head>
   <body>
     <div id="app">
+      <div id="tooltip" role="tooltip">
+        <span>hello waaaaaaa</span>
+
+        <div id="arrow"></div>
+      </div>
+
       <section id="hello"></section>
     </div>
 
     <style>
-      /* poppins*/
-      @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+      #tooltip {
+        padding: 0.5rem;
+        font-size: 0.5rem;
+        font-family: poppins;
+      }
+
+      #tooltip, #arrow {
+        --sky-50: #f0f9ff;
+        --sky-200: #bae6fd;
+        border: 0.1rem solid var(--sky-200);
+        background-color: var(--sky-50);
+        border-radius: 0.2rem;
+      }
+
 
       #gcss {
         outline: 2px solid blue;
@@ -24,7 +44,7 @@
         position: absolute;
         background-color: var(--line-backgroundColor);
       }
-      
+
       .Gline {
         width: var(--line-width);
         height: var(--line-height);
@@ -34,7 +54,7 @@
         --line-0-translateY: calc(var(--line-translateY) + var(--line-height));
         transform: translate(var(--line-translateX), var(--line-0-translateY)) rotate(var(--line-rotate));
       } */
-      
+
       .Gline {
         transform-origin: top left;
         top: var(--line-top);
@@ -81,41 +101,7 @@
         height: var(--before-width);
         border-radius: 50%;
       }
-
-      .Gline::after {
-        content: attr(data-after);
-        white-space: pre;
-        padding: 0.5rem;
-      }
-      
-      .Gline::after {
-        --rotate-correction: calc(var(--line-rotate) * -1);
-        position: absolute;
-        top: 0;
-        right: 0;
-        transform: rotate(var(--rotate-correction));
-        transform-origin: top left;
-      }
-      
-      .Gline::after {
-        font-size: calc(var(--line-height) * 3);
-        background: lightblue;
-        border-radius: 0.5rem;
-        box-shadow: 0 0.2rem 0.2rem 0 rgba(0, 55, 255, 0.2);
-        z-index: 1;
-        font-family: 'Poppins', monospace;
-      }
-
-      .Gline::after {
-        opacity: 0;
-      }
-
-      .Gline:hover::after {
-        opacity: 1;
-        z-index: -1;
-      }
     </style>
-
 
     <script type="module" src="/main.js"></script>
   </body>

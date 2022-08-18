@@ -1,6 +1,6 @@
 export default class PositionSpecificy {
-  constructor(_transformObj) {
-    this.obj = _transformObj;
+  constructor(_this) {
+    this.obj = _this;
     this.objKeysArrayReversed = Object.keys(this.obj).reverse();
 
     this.XpossibleDirection = ["left", "right"];

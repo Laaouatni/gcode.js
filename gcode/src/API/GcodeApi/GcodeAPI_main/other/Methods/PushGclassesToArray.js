@@ -2,8 +2,10 @@ import GcodeAPI from "../../../GcodeAPI_main/GcodeAPI.js";
 
 export default class PushGclassesToArray {
   constructor(_this) {
+    this.obj = _this;
+    
     this.toNotPush = ["Gcommands"];
-    this.pushClass(_this);
+    this.pushClass(this.obj);
   }
 
   pushClass(_this) {
