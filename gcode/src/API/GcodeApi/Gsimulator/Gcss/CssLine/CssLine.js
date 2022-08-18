@@ -79,7 +79,7 @@ export default class CssLine {
         length: this.lineLength,
         x: this.currentObj.x,
         y: this.currentObj.y,
-        angle: this.currentObj.angle
+        angle: this.lineAngle
       }, null, 2)}`
     );
   }
