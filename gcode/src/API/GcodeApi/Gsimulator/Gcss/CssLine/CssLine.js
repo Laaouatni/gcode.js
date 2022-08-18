@@ -36,6 +36,7 @@ export default class CssLine {
       button: this.lineElement,
       popup: this.popupEl
     });
+
   }
 
   calcolateLength() {
@@ -74,7 +75,12 @@ export default class CssLine {
     this.lineElement.setAttribute("key", this.index);
     this.lineElement.setAttribute(
       "data-after",
-      `lenght: ${this.lineLength} \n x: ${this.currentObj.x} \n y: ${this.currentObj.y} \n angle: ${this.lineAngle}`,
+      `${JSON.stringify({
+        length: this.lineLength,
+        x: this.currentObj.x,
+        y: this.currentObj.y,
+        angle: this.currentObj.angle
+      }, null, 2)}`
     );
   }
 

@@ -8,6 +8,8 @@ export default class CssFloatPopup {
     this.popup = this.obj.popup;
     this.arrow = this.obj.arrow ?? this.obj.popup.querySelector("#arrow");
 
+    this.popupText = this.popup.querySelector("span");
+
     this.addDefaultStyles();
     this.addEvents();
   }
@@ -18,9 +20,7 @@ export default class CssFloatPopup {
 
   showPopup() {
     this.popup.style.display = "block";
-    this.popup.querySelector(
-      "span",
-    ).textContent = `${this.button.dataset.after}`;
+    this.popupText.textContent = `${this.button.dataset.after}`;
     updatePopup(this);
   }
 
@@ -48,6 +48,8 @@ export default class CssFloatPopup {
     this.popupKeysArray.forEach((key, index) => {
       this.popup.style.setProperty(key, this.PopupValuesArray[index]);
     });
+
+    this.popupText.style.setProperty("white-space", "pre");
   }
 
   styleArrow() {

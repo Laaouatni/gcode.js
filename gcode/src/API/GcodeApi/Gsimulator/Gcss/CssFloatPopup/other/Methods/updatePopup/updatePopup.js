@@ -2,6 +2,7 @@ import { computePosition, shift, offset, arrow, autoPlacement } from "@floating-
 
 export default function updatePopup(_this) {
   computePosition(_this.button, _this.popup, {
+    placement: "bottom",
     middleware: [
       autoPlacement(),
       shift({ padding: 8 }),
