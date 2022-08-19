@@ -1,14 +1,34 @@
-import updatePopup from "./other/Methods/updatePopup/updatePopup";
+import updatePopup from "./other/Methods/updatePopup/updatePopup.js";
 
 export default class CssFloatPopup {
+  static popup;
+  static span;
+  static arrow;
+  
+  static {
+    CssFloatPopup.popup = document.createElement("div");
+    CssFloatPopup.span = document.createElement("span");
+    CssFloatPopup.arrow = document.createElement("div");
+
+    CssFloatPopup.popup.id = "tooltip";
+    CssFloatPopup.popup.role = "tooltip";
+
+    CssFloatPopup.span.style.setProperty("white-space", "pre");
+
+    CssFloatPopup.arrow.id = "arrow";
+
+    CssFloatPopup.popup.appendChild(CssFloatPopup.span);
+    CssFloatPopup.popup.appendChild(CssFloatPopup.arrow);
+  }
+
   constructor(_obj) {
     this.obj = _obj;
 
     this.button = this.obj.button;
-    this.popup = this.obj.popup;
-    this.arrow = this.obj.arrow ?? this.obj.popup.querySelector("#arrow");
-
-    this.popupText = this.popup.querySelector("span");
+    
+    this.popup = CssFloatPopup.popup;
+    this.arrow = CssFloatPopup.arrow;
+    this.span = CssFloatPopup.span;
 
     this.addDefaultStyles();
     this.addEvents();
@@ -20,7 +40,7 @@ export default class CssFloatPopup {
 
   showPopup() {
     this.popup.style.display = "block";
-    this.popupText.textContent = `${this.button.dataset.after}`;
+    this.span.textContent = `${this.button.dataset.line}`;
     updatePopup(this);
   }
 
@@ -49,7 +69,7 @@ export default class CssFloatPopup {
       this.popup.style.setProperty(key, this.PopupValuesArray[index]);
     });
 
-    this.popupText.style.setProperty("white-space", "pre");
+    this.span.style.setProperty("white-space", "pre");
   }
 
   styleArrow() {
