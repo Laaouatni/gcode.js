@@ -1,6 +1,7 @@
 import Gsimulator from "../Gsimulator.js";
 import GcodeAPI from "../../GcodeAPI_main/GcodeAPI.js";
 import CssLine from "./CssLine/CssLine.js";
+import CssFloatPopup from "./CssFloatPopup/CssFloatPopup.js";
 
 export default class Gcss extends Gsimulator {
   constructor(_GcssObj) {
@@ -14,6 +15,8 @@ export default class Gcss extends Gsimulator {
       document.querySelector("#app") ??
       document.body;
     
+    this.parentHtmlContainer.appendChild(CssFloatPopup.popup);
+
     this.create();
   }
 

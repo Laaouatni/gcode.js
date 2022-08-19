@@ -6,7 +6,6 @@ export default class CssLine {
   constructor(_CurrentObj, _index) {
     this.index = _index;
     this.lineElement = document.createElement("div");
-    this.popupEl = document.querySelector("#tooltip");
 
     this.currentObj = _CurrentObj;
     this.previusObj = GcodeAPI.array[this.index - 1 > 0 ? this.index - 1 : 0];
@@ -34,7 +33,6 @@ export default class CssLine {
     
     this.createPopup({
       button: this.lineElement,
-      popup: this.popupEl
     });
 
   }
@@ -59,6 +57,7 @@ export default class CssLine {
       top: `${this.smallestPos.y}px`,
       rotate: `${this.lineAngle}deg`,
       backgroundColor: "red",
+      zIndex: `${GcodeAPI.array.length - this.index}`
     };
 
     this.stylesKeysArray = Object.keys(this.lineStylesObj);
@@ -74,7 +73,7 @@ export default class CssLine {
     this.lineElement.classList.add("Gline");
     this.lineElement.setAttribute("key", this.index);
     this.lineElement.setAttribute(
-      "data-after",
+      "data-line",
       `${JSON.stringify({
         length: this.lineLength,
         x: this.currentObj.x,
