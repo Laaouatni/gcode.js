@@ -1,0 +1,3 @@
+.Gline:hover::before {
+  transform: scale(2) translateY(-25%);
+}
