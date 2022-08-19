@@ -57,6 +57,7 @@ export default class CssLine {
       top: `${this.smallestPos.y}px`,
       rotate: `${this.lineAngle}deg`,
       backgroundColor: "red",
+      zIndex: `${GcodeAPI.array.length - this.index}`
     };
 
     this.stylesKeysArray = Object.keys(this.lineStylesObj);

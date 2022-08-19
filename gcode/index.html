@@ -54,6 +54,7 @@
         top: var(--line-top);
         left: var(--line-left);
         transform: rotate(var(--line-rotate));
+        z-index: var(--line-zIndex);
       }
 
       .Gline::before {
@@ -80,8 +81,7 @@
         position: absolute;
         top: 50%;
         right: 0;
-        transform: translate(0, -50%);
-        z-index: 5 !important;
+        transform: translate(50%, -50%);
       }
 
       .Gline::before {
