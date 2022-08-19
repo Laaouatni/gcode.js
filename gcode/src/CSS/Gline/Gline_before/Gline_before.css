@@ -1,0 +1,37 @@
+.Gline::before {
+  content: attr(key);
+}
+
+.Gline::before {
+  font-size: calc(var(--line-height) * 2.5);
+  font-family: monospace;
+}
+
+.Gline::before {
+  --before-width: calc(var(--line-height) * 3.5);
+  width: var(--before-width);
+  height: var(--before-width);
+  border-radius: 50%;
+}
+
+.Gline::before {
+  background: blue;
+  color: white;
+}
+
+.Gline::before {
+  display: grid;
+  place-items: center;
+  box-sizing: border-box;
+}
+
+.Gline::before {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(50%, -50%);
+}
+
+.Gline::before {
+  transition: transform 0.2s;
+}

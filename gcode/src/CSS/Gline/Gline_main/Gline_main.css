@@ -1,0 +1,17 @@
+.Gline {
+  position: absolute;
+  background-color: var(--line-backgroundColor);
+}
+
+.Gline {
+  width: var(--line-width);
+  height: var(--line-height);
+}
+
+.Gline {
+  transform-origin: top left;
+  top: var(--line-top);
+  left: var(--line-left);
+  transform: rotate(var(--line-rotate));
+  z-index: var(--line-zIndex);
+}
