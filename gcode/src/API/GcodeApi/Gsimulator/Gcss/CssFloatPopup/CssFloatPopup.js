@@ -11,7 +11,6 @@ export default class CssFloatPopup {
     CssFloatPopup.arrow = document.createElement("div");
 
     CssFloatPopup.popup.id = "tooltip";
-    CssFloatPopup.popup.role = "tooltip";
 
     CssFloatPopup.span.style.setProperty("white-space", "pre");
 
