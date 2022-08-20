@@ -56,7 +56,7 @@ export default class CssLine {
       left: `${this.smallestPos.x}px`,
       top: `${this.smallestPos.y}px`,
       rotate: `${this.lineAngle}deg`,
-      backgroundColor: "red",
+      backgroundColor: "var(--sky-200)",
       zIndex: `${GcodeAPI.array.length - this.index}`
     };
 
@@ -75,10 +75,10 @@ export default class CssLine {
     this.lineElement.setAttribute(
       "data-line",
       `${JSON.stringify({
-        length: this.lineLength,
-        x: this.currentObj.x,
-        y: this.currentObj.y,
-        angle: this.lineAngle
+        length: this.lineLength.toFixed(2),
+        x: this.currentObj.x.toFixed(2),
+        y: this.currentObj.y.toFixed(2),
+        angle: this.lineAngle.toFixed(2)
       }, null, 2)}`
     );
   }

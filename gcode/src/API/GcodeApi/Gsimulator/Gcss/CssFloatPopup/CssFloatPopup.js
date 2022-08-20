@@ -1,18 +1,16 @@
 import updatePopup from "./other/Methods/updatePopup/updatePopup.js";
-
+import getPopupSpanHtml from "./other/Methods/getPopupSpanHtml/getPopupSpanHtml.js";
 export default class CssFloatPopup {
   static popup;
   static span;
   static arrow;
-  
+
   static {
     CssFloatPopup.popup = document.createElement("div");
     CssFloatPopup.span = document.createElement("span");
     CssFloatPopup.arrow = document.createElement("div");
 
     CssFloatPopup.popup.id = "tooltip";
-
-    CssFloatPopup.span.style.setProperty("white-space", "pre");
 
     CssFloatPopup.arrow.id = "arrow";
 
@@ -24,7 +22,7 @@ export default class CssFloatPopup {
     this.obj = _obj;
 
     this.button = this.obj.button;
-    
+
     this.popup = CssFloatPopup.popup;
     this.arrow = CssFloatPopup.arrow;
     this.span = CssFloatPopup.span;
@@ -39,7 +37,7 @@ export default class CssFloatPopup {
 
   showPopup() {
     this.popup.style.display = "block";
-    this.span.textContent = `${this.button.dataset.line}`;
+    this.span.innerHTML = getPopupSpanHtml(this);
     updatePopup(this);
   }
 
@@ -67,15 +65,13 @@ export default class CssFloatPopup {
     this.popupKeysArray.forEach((key, index) => {
       this.popup.style.setProperty(key, this.PopupValuesArray[index]);
     });
-
-    this.span.style.setProperty("white-space", "pre");
   }
 
   styleArrow() {
     this.arrowStylesToAdd = {
       position: "absolute",
-      width: "8px",
-      height: "8px",
+      width: "0.5rem",
+      height: "0.5rem",
       transform: "rotate(45deg)",
       "z-index": -1,
     };

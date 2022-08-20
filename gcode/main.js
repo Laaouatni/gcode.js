@@ -1,4 +1,7 @@
+const t0 = performance.now();
 // import GcodeAPI from "./src/API/GcodeApi/GcodeAPI_main/GcodeAPI";
+
+
 import G0 from "./src/API/GcodeApi/Gcommands/G/G0";
 import Gcss from "./src/API/GcodeApi/Gsimulator/Gcss/Gcss.js";
 
@@ -20,3 +23,8 @@ let g = new Gcss({
 });
 
 g.generate();
+
+
+const t1 = performance.now();
+
+console.log(`Call to doSomething took ${t1 - t0} milliseconds.`);

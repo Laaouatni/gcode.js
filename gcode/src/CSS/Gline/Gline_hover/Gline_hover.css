@@ -1,3 +1,8 @@
 .Gline:hover::before {
   transform: scale(2) translateY(-25%);
 }
+
+.Gline:hover {
+  height: calc(var(--line-height) * 1.5);
+  transition: height 0.2s;
+}
