@@ -56,7 +56,7 @@ export default class CssLine {
       left: `${this.smallestPos.x}px`,
       top: `${this.smallestPos.y}px`,
       rotate: `${this.lineAngle}deg`,
-      backgroundColor: "red",
+      backgroundColor: "var(--sky-200)",
       zIndex: `${GcodeAPI.array.length - this.index}`
     };
 

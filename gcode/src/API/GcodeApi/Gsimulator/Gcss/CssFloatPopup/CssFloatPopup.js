@@ -70,8 +70,8 @@ export default class CssFloatPopup {
   styleArrow() {
     this.arrowStylesToAdd = {
       position: "absolute",
-      width: "1rem",
-      height: "1rem",
+      width: "0.5rem",
+      height: "0.5rem",
       transform: "rotate(45deg)",
       "z-index": -1,
     };
