@@ -14,9 +14,9 @@ export default class Gcss extends Gsimulator {
       _GcssObj.parentHtmlContainer ??
       document.querySelector("#app") ??
       document.body;
-    
-    this.parentHtmlContainer.appendChild(CssFloatPopup.popup);
 
+    this.parentHtmlContainer.appendChild(CssFloatPopup.popup);
+    
     this.create();
   }
 
@@ -24,12 +24,12 @@ export default class Gcss extends Gsimulator {
     this.cssContainer = document.createElement("div");
     this.cssContainer.id = "gcss";
     this.parentHtmlContainer.appendChild(this.cssContainer);
-    
+
     this.changeSize();
   }
 
   changeSize() {
-    this.cssContainer.style.width  = `${this.width}px`;
+    this.cssContainer.style.width = `${this.width}px`;
     this.cssContainer.style.height = `${this.height}px`;
   }
 

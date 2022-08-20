@@ -4,15 +4,13 @@ export default class CssFloatPopup {
   static popup;
   static span;
   static arrow;
-  
+
   static {
     CssFloatPopup.popup = document.createElement("div");
     CssFloatPopup.span = document.createElement("span");
     CssFloatPopup.arrow = document.createElement("div");
 
     CssFloatPopup.popup.id = "tooltip";
-
-    CssFloatPopup.span.style.setProperty("white-space", "pre");
 
     CssFloatPopup.arrow.id = "arrow";
 
@@ -24,7 +22,7 @@ export default class CssFloatPopup {
     this.obj = _obj;
 
     this.button = this.obj.button;
-    
+
     this.popup = CssFloatPopup.popup;
     this.arrow = CssFloatPopup.arrow;
     this.span = CssFloatPopup.span;
@@ -39,8 +37,61 @@ export default class CssFloatPopup {
 
   showPopup() {
     this.popup.style.display = "block";
-    this.span.textContent = `${this.button.dataset.line}`;
+    this.span.innerHTML = this.styleCustomSpanHTML();
     updatePopup(this);
+  }
+
+  styleCustomSpanHTML() {
+    this.lineParsedJson = JSON.parse(this.button.dataset.line);
+    this.linePopupSpanHtml = `
+    <div style="display: flex; align-items: center; gap: 1rem; width: min-content; font-family: poppins;">
+      <div>
+        <div style="display: flex; align-items: center; font-size: 2rem; gap: 0.5rem;">
+          <div style="font-size: 2rem; font-weight: bold;">X</div>
+          <div style="display: flex; align-items: baseline;">
+            <div>${this.lineParsedJson.x.split(".")[0]}</div>
+            <div style="font-size: 1.5rem;">.${
+              this.lineParsedJson.x.split(".")[1]
+            }</div>
+          </div>
+        </div>
+
+        <div style="display: flex; align-items: center; font-size: 2rem; gap: 0.5rem;">
+          <div style="font-size: 2rem; font-weight: bold;">Y</div>
+          <div style="display: flex; align-items: baseline;">
+            <div>${this.lineParsedJson.y.split(".")[0]}</div>
+            <div style="font-size: 1.5rem;">.${
+              this.lineParsedJson.y.split(".")[1]
+            }</div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div style="display: flex; align-items: center; font-size: 2rem; gap: 0.5rem;">
+          <div style="font-size: 2rem; font-weight: bold;">LENGTH</div>
+          <div style="display: flex; align-items: baseline;">
+            <div>${this.lineParsedJson.length.split(".")[0]}</div>
+            <div style="font-size: 1.5rem;">.${
+              this.lineParsedJson.length.split(".")[1]
+            }</div>
+          </div>
+        </div>
+
+        <div style="display: flex; align-items: center; font-size: 2rem; gap: 0.5rem;">
+          <div style="font-size: 2rem; font-weight: bold;">ANGLE&nbsp;&nbsp;&nbsp;</div>
+          <div style="display: flex; align-items: baseline;">
+            <div>${this.lineParsedJson.angle.split(".")[0]}</div>
+            <div style="font-size: 1.5rem;">.${
+              this.lineParsedJson.angle.split(".")[1]
+            }</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    `;
+
+    return this.linePopupSpanHtml;
   }
 
   addEvents() {
@@ -67,15 +118,13 @@ export default class CssFloatPopup {
     this.popupKeysArray.forEach((key, index) => {
       this.popup.style.setProperty(key, this.PopupValuesArray[index]);
     });
-
-    this.span.style.setProperty("white-space", "pre");
   }
 
   styleArrow() {
     this.arrowStylesToAdd = {
       position: "absolute",
-      width: "8px",
-      height: "8px",
+      width: "1rem",
+      height: "1rem",
       transform: "rotate(45deg)",
       "z-index": -1,
     };
