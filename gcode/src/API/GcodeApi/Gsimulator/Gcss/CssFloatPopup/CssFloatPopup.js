@@ -46,21 +46,21 @@ export default class CssFloatPopup {
     this.linePopupSpanHtml = `
     <div style="display: flex; align-items: center; gap: 1rem; width: min-content; font-family: poppins;">
       <div>
-        <div style="display: flex; align-items: center; font-size: 2rem; gap: 0.5rem;">
-          <div style="font-size: 2rem; font-weight: bold;">X</div>
+        <div style="display: flex; align-items: center; font-size: 1rem; gap: 0.5rem;">
+          <div style="font-size: 1rem; font-weight: bold;">X</div>
           <div style="display: flex; align-items: baseline;">
             <div>${this.lineParsedJson.x.split(".")[0]}</div>
-            <div style="font-size: 1.5rem;">.${
+            <div style="font-size: 0.7rem;">.${
               this.lineParsedJson.x.split(".")[1]
             }</div>
           </div>
         </div>
 
-        <div style="display: flex; align-items: center; font-size: 2rem; gap: 0.5rem;">
-          <div style="font-size: 2rem; font-weight: bold;">Y</div>
+        <div style="display: flex; align-items: center; font-size: 1rem; gap: 0.5rem;">
+          <div style="font-size: 1rem; font-weight: bold;">Y</div>
           <div style="display: flex; align-items: baseline;">
             <div>${this.lineParsedJson.y.split(".")[0]}</div>
-            <div style="font-size: 1.5rem;">.${
+            <div style="font-size: 0.7rem;">.${
               this.lineParsedJson.y.split(".")[1]
             }</div>
           </div>
@@ -68,21 +68,21 @@ export default class CssFloatPopup {
       </div>
 
       <div>
-        <div style="display: flex; align-items: center; font-size: 2rem; gap: 0.5rem;">
-          <div style="font-size: 2rem; font-weight: bold;">LENGTH</div>
+        <div style="display: flex; align-items: center; font-size: 1rem; gap: 0.5rem;">
+          <div style="font-size: 1rem; font-weight: bold;">LENGTH</div>
           <div style="display: flex; align-items: baseline;">
             <div>${this.lineParsedJson.length.split(".")[0]}</div>
-            <div style="font-size: 1.5rem;">.${
+            <div style="font-size: 0.7rem;">.${
               this.lineParsedJson.length.split(".")[1]
             }</div>
           </div>
         </div>
 
-        <div style="display: flex; align-items: center; font-size: 2rem; gap: 0.5rem;">
-          <div style="font-size: 2rem; font-weight: bold;">ANGLE&nbsp;&nbsp;&nbsp;</div>
+        <div style="display: flex; align-items: center; font-size: 1rem; gap: 0.5rem;">
+          <div style="font-size: 1rem; font-weight: bold;">ANGLE&nbsp;&nbsp;&nbsp;</div>
           <div style="display: flex; align-items: baseline;">
             <div>${this.lineParsedJson.angle.split(".")[0]}</div>
-            <div style="font-size: 1.5rem;">.${
+            <div style="font-size: 0.7rem;">.${
               this.lineParsedJson.angle.split(".")[1]
             }</div>
           </div>
