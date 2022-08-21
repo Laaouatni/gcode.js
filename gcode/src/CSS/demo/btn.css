@@ -1,0 +1,20 @@
+#btn {
+  font-size: 5vw;
+  font-family: poppins;
+  padding: 2vw 4vw;
+  background-color: var(--sky-50);
+  border: none;
+  border-radius: 2vw;
+  box-shadow: inset 0 -2vw 3vw var(--sky-200);
+  transition: all 0.2s ease-in-out;
+}
+
+#btn:not(:disabled):hover {
+  box-shadow: inset 0 1vw 6vw var(--sky-200),
+    0 1vw 5vw rgba(0, 0, 0, 0.2);
+  transform: scale(1.5) rotate(5deg);
+}
+
+#btn:disabled {
+  display: none;
+}

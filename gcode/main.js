@@ -16,15 +16,21 @@ for (let i = 0; i < 9; i++) {
 }
 
 
-let g = new Gcss({
-  width: 500,
-  height: 500,
-  parentHtmlContainer: document.querySelector("section"),
-});
 
-g.generate();
+let btn = document.querySelector("#btn")
 
+btn.addEventListener("click", btnGenerate, { once: true });
 
+function btnGenerate() {
+  let g = new Gcss({
+    width: 500,
+    height: 500,
+    parentHtmlContainer: document.querySelector("section"),
+  });
+
+  g.generate();
+
+  btn.disabled = true;
+}
 const t1 = performance.now();
-
 console.log(`Call to doSomething took ${t1 - t0} milliseconds.`);
