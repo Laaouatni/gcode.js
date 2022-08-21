@@ -9,4 +9,5 @@
   background-color: var(--sky-50);
   border-radius: 0.5rem;
   box-shadow: 0 0.5rem 1rem var(--sky-200);
+  z-index: 9999;
 }

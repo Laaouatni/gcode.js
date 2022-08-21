@@ -1,4 +1,4 @@
-import { computePosition, shift, offset, arrow, autoPlacement } from "@floating-ui/dom";
+import { computePosition, shift, offset, arrow, autoPlacement, flip  } from "@floating-ui/dom";
 
 export default function updatePopup(_this) {
   computePosition(_this.button, _this.popup, {
@@ -15,6 +15,7 @@ export default function updatePopup(_this) {
       top: `${y}px`,
     });
 
+  console.log(middlewareData)
     const { x: arrowX, y: arrowY } = middlewareData.arrow;
 
     const staticSide = {
@@ -29,7 +30,7 @@ export default function updatePopup(_this) {
       top: arrowY != null ? `${arrowY}px` : "",
       right: "",
       bottom: "",
-      [staticSide]: "-4px",
+      [staticSide]: "-10px",
     });
   });
 }

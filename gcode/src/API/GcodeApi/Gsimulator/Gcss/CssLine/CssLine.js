@@ -26,7 +26,7 @@ export default class CssLine {
     };
 
     this.lineLength = this.calcolateLength();
-    this.lineHeight = this.calcolateHeight(0.2); // 0.2rem
+    this.lineHeight = this.calcolateHeight(0.4); // 0.2rem
     this.lineAngle = this.calcolateAngle();
 
     this.styleLine();
