@@ -4,6 +4,7 @@
 }
 
 .Gline {
+  /*here was var(--line-width)*/
   width: var(--line-width);
   height: var(--line-height);
 }
@@ -14,4 +15,22 @@
   left: var(--line-left);
   transform: rotate(var(--line-rotate));
   z-index: var(--line-zIndex);
+}
+
+.Gline {
+  width: 0;
+  opacity: 0;
+  animation: gline var(--line-animSpeed) ease-in-out forwards;
+  animation-delay: calc(var(--line-animSpeed) * var(--line-key));
+}
+
+@keyframes gline {
+  0% {
+    opacity: 0;
+    width: 0;
+  }
+  100% {
+    width: var(--line-width);
+    opacity: 1;
+  }
 }
