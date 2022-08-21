@@ -42,9 +42,6 @@ export default class Gcss extends Gsimulator {
   generate() {
     GcodeAPI.array.forEach((_posObj, _index) => {
       this.drawLine(_posObj, _index);
-      let newp = document.createElement("div");
-      newp.textContent = _posObj.lineOfCode;
-      this.parentHtmlContainer.appendChild(newp);
     });
   }
 }

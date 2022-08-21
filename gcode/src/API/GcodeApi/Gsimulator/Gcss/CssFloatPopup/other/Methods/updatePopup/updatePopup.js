@@ -6,6 +6,8 @@ import {
   autoPlacement,
 } from "@floating-ui/dom";
 
+import calcolatePopupArrowXposition from "./other/Methods/calcolatePopupArrowPos/x/calcolatePopupArrowXposition.js";
+import calcolatePopupArrowYposition from "./other/Methods/calcolatePopupArrowPos/y/calcolatePopupArrowYposition.js";
 export default class UpdatePopup {
   constructor(_this) {
     this.button = _this.button;
@@ -60,55 +62,13 @@ export default class UpdatePopup {
   calcolatePosition(_x, _y) {
     return {
       popup: {
-        x: this.calcolateXposition(_x).popup,
-        y: this.calcolateYposition(_y).popup,
+        x: calcolatePopupArrowXposition(_x, this).popup,
+        y: calcolatePopupArrowYposition(_y, this).popup,
       },
       arrow: {
-        x: this.calcolateXposition(_x).arrow,
-        y: this.calcolateYposition(_y).arrow,
+        x: calcolatePopupArrowXposition(_x, this).arrow,
+        y: calcolatePopupArrowYposition(_y, this).arrow,
       },
     };
-  }
-
-  calcolateXposition(_x) {
-    if (_x > this.parentPosition.x) {
-      if (
-        this.parentPosition.x + this.parentElement.offsetWidth <
-        _x + this.popup.offsetWidth
-      ) {
-        return {
-          popup:
-            this.parentPosition.x +
-            this.parentElement.offsetWidth -
-            this.popup.offsetWidth -
-            this.padding,
-          arrow: this.arrowX,
-        };
-      }
-      return {
-        popup: _x,
-        arrow: this.arrowX,
-      };
-    } else if (_x <= this.parentPosition.x) {
-      return {
-        popup: this.parentPosition.x + this.padding,
-        arrow: this.arrowX - (this.parentPosition.x - _x),
-      };
-    }
-  }
-
-  calcolateYposition(_y) {
-    if (_y > this.parentPosition.y) {
-      console.log({parenty: this.parentPosition.y, parentheight: this.parentElement.offsetHeight, popupheight: this.popup.offsetHeight, y: _y});
-      return {
-        popup: _y,
-        arrow: this.arrowY,
-      };
-    } else if (_y < this.parentPosition.y) {
-      return {
-        popup: this.parentPosition.y + this.padding,
-        arrow: this.arrowY - (this.parentPosition.y - _y) + this.padding,
-      };
-    }
   }
 }
