@@ -9,7 +9,7 @@
 }
 
 .Gline {
-  transform-origin: top left;
+  transform-origin: bottom left;
   top: var(--line-top);
   left: var(--line-left);
   transform: rotate(var(--line-rotate));

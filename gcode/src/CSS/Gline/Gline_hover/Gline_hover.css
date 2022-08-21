@@ -1,5 +1,5 @@
 .Gline:hover::before {
-  transform: scale(2) translateY(-25%);
+  zoom: 1.5;
 }
 
 .Gline:hover {
