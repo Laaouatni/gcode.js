@@ -7,11 +7,14 @@ basically a gcode library for making the making gcode program easily and efficie
 let g = new G0({});
 
 for(let i=0; i < 10; i++) {
-   g.moveTo({left: 100})
+   a.moveTo({ 
+      left: Math.random() * 100,
+      top: Math.random() * 100 
+   });
 }
 ```
 
-beta: https://gcode-js.vercel.app
+demo: https://gcode-js.vercel.app
 
 - [x] css simulator
 
