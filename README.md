@@ -1,6 +1,6 @@
 # gcode.js
 
-basically a gcode library for making the making gcode program easily and efficiently for CNC machines.
+basically a gcode library for making the creation of gcode programs easily and efficiently for CNC machines.
 
 ```javascript
 // example
@@ -14,7 +14,7 @@ for(let i=0; i < 10; i++) {
 }
 ```
 
-demo: https://gcode-js.vercel.app
+> demo: https://gcode-js.vercel.app
 
 ![image](https://user-images.githubusercontent.com/87947051/185802527-f03e7aba-45ed-4eb0-a6cd-f2f31048912f.png)
 
