@@ -22,6 +22,7 @@ export default class UpdatePopup {
     };
 
     this.padding = 8;
+    this.radiusPopup = window.getComputedStyle(this.popup).borderRadius.split("px")[0] ?? 0;
   }
 
   update() {

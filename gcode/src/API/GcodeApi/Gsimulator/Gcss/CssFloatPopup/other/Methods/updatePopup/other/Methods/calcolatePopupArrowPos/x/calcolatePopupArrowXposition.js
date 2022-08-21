@@ -21,7 +21,11 @@ export default function calcolatePopupArrowXposition(_x, _this) {
   } else if (_x <= _this.parentPosition.x) {
     return {
       popup: _this.parentPosition.x + _this.padding,
-      arrow: _this.arrowX - (_this.parentPosition.x - _x),
+      arrow:
+        _this.arrowX -
+        (_this.parentPosition.x - _x) +
+        _this.padding +
+        _this.radiusPopup,
     };
   }
 }
