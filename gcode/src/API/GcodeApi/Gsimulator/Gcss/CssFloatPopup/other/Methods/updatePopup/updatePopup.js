@@ -32,14 +32,13 @@ export default class UpdatePopup {
       ],
     }).then(({ x, y, placement, middlewareData }) => {
       ({ x: this.arrowX, y: this.arrowY } = middlewareData.arrow);
-      
+
       this.choosedPos = this.calcolatePosition(x, y);
 
       Object.assign(this.popup.style, {
         left: `${this.choosedPos.popup.x}px`,
         top: `${this.choosedPos.popup.y}px`,
       });
-
 
       this.staticSide = {
         top: "bottom",
@@ -73,11 +72,24 @@ export default class UpdatePopup {
 
   calcolateXposition(_x) {
     if (_x > this.parentPosition.x) {
+      if (
+        this.parentPosition.x + this.parentElement.offsetWidth <
+        _x + this.popup.offsetWidth
+      ) {
+        return {
+          popup:
+            this.parentPosition.x +
+            this.parentElement.offsetWidth -
+            this.popup.offsetWidth -
+            this.padding,
+          arrow: this.arrowX,
+        };
+      }
       return {
         popup: _x,
-        arrow: this.arrowX
+        arrow: this.arrowX,
       };
-    } else if (_x < this.parentPosition.x) {
+    } else if (_x <= this.parentPosition.x) {
       return {
         popup: this.parentPosition.x + this.padding,
         arrow: this.arrowX - (this.parentPosition.x - _x),
@@ -87,9 +99,10 @@ export default class UpdatePopup {
 
   calcolateYposition(_y) {
     if (_y > this.parentPosition.y) {
+      console.log({parenty: this.parentPosition.y, parentheight: this.parentElement.offsetHeight, popupheight: this.popup.offsetHeight, y: _y});
       return {
         popup: _y,
-        arrow: this.arrowY
+        arrow: this.arrowY,
       };
     } else if (_y < this.parentPosition.y) {
       return {
