@@ -9,9 +9,9 @@ let a = new G0({});
 
 for (let i = 0; i < 9; i++) {
   if (i % 2 == 0) {
-    a.moveTo({ left: Math.random() * 100, top: Math.random() * 100 });
+    a.moveTo({ left: Math.random() * 100, top: Math.random() * 50 });
   } else {
-    a.moveTo({ top: Math.random() * 200, left: Math.random() * 100 });
+    a.moveTo({ top: Math.random() * 100, left: Math.random() * 50 });
   }
 }
 
