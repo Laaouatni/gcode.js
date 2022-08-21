@@ -3,12 +3,12 @@
 }
 
 .Gline::before {
-  font-size: calc(var(--line-height) * 2.5);
+  font-size: calc(var(--line-height) * 1.5);
   font-family: monospace;
 }
 
 .Gline::before {
-  --before-width: calc(var(--line-height) * 3.5);
+  --before-width: calc(var(--line-height) * 2.5);
   width: var(--before-width);
   height: var(--before-width);
   border-radius: 50%;

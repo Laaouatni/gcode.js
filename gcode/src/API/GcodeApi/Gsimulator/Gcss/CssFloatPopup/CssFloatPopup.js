@@ -1,4 +1,4 @@
-import updatePopup from "./other/Methods/updatePopup/updatePopup.js";
+import UpdatePopup from "./other/Methods/updatePopup/updatePopup.js";
 import getPopupSpanHtml from "./other/Methods/getPopupSpanHtml/getPopupSpanHtml.js";
 export default class CssFloatPopup {
   static popup;
@@ -18,7 +18,7 @@ export default class CssFloatPopup {
     CssFloatPopup.popup.appendChild(CssFloatPopup.arrow);
   }
 
-  constructor(_obj) {
+  constructor(_obj, _this) {
     this.obj = _obj;
 
     this.button = this.obj.button;
@@ -26,6 +26,8 @@ export default class CssFloatPopup {
     this.popup = CssFloatPopup.popup;
     this.arrow = CssFloatPopup.arrow;
     this.span = CssFloatPopup.span;
+
+    this.parentElement = _this.parentElement;
 
     this.addDefaultStyles();
     this.addEvents();
@@ -38,7 +40,7 @@ export default class CssFloatPopup {
   showPopup() {
     this.popup.style.display = "block";
     this.span.innerHTML = getPopupSpanHtml(this);
-    updatePopup(this);
+    new UpdatePopup(this).update();
   }
 
   addEvents() {

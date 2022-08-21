@@ -1,6 +1,4 @@
 #arrow {
   background-color: var(--sky-50);
-  border-radius: 0.2rem 0 0 0;
-  border-left: 0.1rem solid var(--sky-200);
-  border-top: 0.1rem solid var(--sky-200);
+  border-radius: 0.2rem;
 }

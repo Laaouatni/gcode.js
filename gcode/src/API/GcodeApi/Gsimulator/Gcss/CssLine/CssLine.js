@@ -3,7 +3,7 @@ import CssLineLength from "../other/Methods/CssLineLength/CssLineLength.js";
 import CssLineAngle from "../other/Methods/CssLineAngle/CssLineAngle.js";
 import CssFloatPopup from "../CssFloatPopup/CssFloatPopup.js";
 export default class CssLine {
-  constructor(_CurrentObj, _index) {
+  constructor(_CurrentObj, _index, _this) {
     this.index = _index;
     this.lineElement = document.createElement("div");
 
@@ -31,10 +31,11 @@ export default class CssLine {
 
     this.styleLine();
     
+    this.parentElement = _this.parentHtmlContainer;
+    
     this.createPopup({
       button: this.lineElement,
     });
-
   }
 
   calcolateLength() {
@@ -84,6 +85,6 @@ export default class CssLine {
   }
 
   createPopup(_obj) {
-    this.popupClass = new CssFloatPopup(_obj);
+    this.popupClass = new CssFloatPopup(_obj, this);
   }
 }
