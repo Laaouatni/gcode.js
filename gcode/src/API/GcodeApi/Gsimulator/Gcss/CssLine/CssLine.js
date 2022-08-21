@@ -30,9 +30,9 @@ export default class CssLine {
     this.lineAngle = this.calcolateAngle();
 
     this.styleLine();
-    
+
     this.parentElement = _this.parentHtmlContainer;
-    
+
     this.createPopup({
       button: this.lineElement,
     });
@@ -80,7 +80,7 @@ export default class CssLine {
         x: this.currentObj.x.toFixed(2),
         y: this.currentObj.y.toFixed(2),
         angle: this.lineAngle.toFixed(2)
-      }, null, 2)}`
+      })}`
     );
   }
 
