@@ -21,10 +21,7 @@ export default class CssLineLength {
       this.obj.currentObj.x !== this.obj.previusObj.x
     ) {
       // pitagora's theorem
-      return Math.sqrt(
-        Math.pow(this.obj.PosDifference.x, 2) +
-          Math.pow(this.obj.PosDifference.y, 2),
-      );
+      return Math.hypot(this.obj.PosDifference.x, this.obj.PosDifference.y);
     } else {
       // 0 means they aren't moving
       return 0;
