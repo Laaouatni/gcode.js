@@ -48,15 +48,6 @@ export default class CssFloatPopup {
       this.showPopup();
     });
 
-    this.button.addEventListener("mousemove", (e) => {
-      this.buttonLeft = parseFloat(window.getComputedStyle(this.button).getPropertyValue("left"));
-      this.buttonTop = parseFloat(window.getComputedStyle(this.button).getPropertyValue("top"));
-      
-      this.popupMouseMoveDifferenceX = (e.clientX - this.buttonLeft) / 5;
-      this.popupMouseMoveDifferenceY = (e.clientY - this.buttonTop) / 5;
-      
-      this.popup.style.transform = `translate(${this.popupMouseMoveDifferenceX}px, ${this.popupMouseMoveDifferenceY}px)`;
-    });
 
     this.button.addEventListener("mouseleave", () => {
       this.hidePopup();
