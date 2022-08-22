@@ -62,6 +62,7 @@ export default class CssFloatPopup {
       opacity: 0, 
       "z-index": "999999",
       "pointer-events": "none",
+      transition: `top 0.3s ease-in-out,` + `left 0.3s ease-in-out,` + `opacity 0.3s ease-in-out`,
     };
 
     this.popupKeysArray = Object.keys(this.popupStylesToAdd);
@@ -79,6 +80,7 @@ export default class CssFloatPopup {
       height: "1rem",
       transform: "rotate(45deg)",
       "z-index": -1,
+      transition: `top 0.3s ease-in-out,` + `left 0.3s ease-in-out`,
     };
 
     this.arrowKeysArray = Object.keys(this.arrowStylesToAdd);

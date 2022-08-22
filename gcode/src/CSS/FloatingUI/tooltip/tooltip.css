@@ -10,9 +10,3 @@
   border-radius: 0.5rem;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 }
-
-#tooltip {
-  transition: top 0.3s ease-in-out, 
-    left 0.3s ease-in-out,
-    opacity 0.2s ease-in-out;
-}
