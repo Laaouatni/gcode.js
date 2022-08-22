@@ -7,11 +7,7 @@ import Gcss from "./src/API/GcodeApi/Gsimulator/Gcss/Gcss.js";
 let a = new G0({});
 
 for (let i = 0; i < 9; i++) {
-  if (i % 2 == 0) {
-    a.moveTo({ left: Math.random() * 100, top: Math.random() * 50 });
-  } else {
-    a.moveTo({ top: Math.random() * 100, left: Math.random() * 50 });
-  }
+  a.moveTo({ left: 50, top: 10*i});
 }
 
 
