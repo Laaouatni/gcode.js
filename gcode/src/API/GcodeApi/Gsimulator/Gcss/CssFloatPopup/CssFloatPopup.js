@@ -34,11 +34,11 @@ export default class CssFloatPopup {
   }
 
   hidePopup() {
-    this.popup.style.display = "none";
+    this.popup.style.opacity = "0";
   }
 
   showPopup() {
-    this.popup.style.display = "block";
+    this.popup.style.opacity = "1";
     this.span.innerHTML = getPopupSpanHtml(this);
     new UpdatePopup(this).update();
   }
@@ -55,10 +55,14 @@ export default class CssFloatPopup {
 
   stylePopup() {
     this.popupStylesToAdd = {
-      display: "none",
+      display: "block",
       position: "absolute",
       top: 0,
       left: 0,
+      opacity: 0, 
+      "z-index": "999999",
+      "pointer-events": "none",
+      transition: `top 0.3s ease-in-out,` + `left 0.3s ease-in-out,` + `opacity 0.3s ease-in-out`,
     };
 
     this.popupKeysArray = Object.keys(this.popupStylesToAdd);
@@ -76,6 +80,7 @@ export default class CssFloatPopup {
       height: "1rem",
       transform: "rotate(45deg)",
       "z-index": -1,
+      transition: `top 0.3s ease-in-out,` + `left 0.3s ease-in-out`,
     };
 
     this.arrowKeysArray = Object.keys(this.arrowStylesToAdd);
