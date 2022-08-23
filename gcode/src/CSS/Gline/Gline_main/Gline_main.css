@@ -10,17 +10,24 @@
 }
 
 .Gline {
-  transform-origin: bottom left;
   top: var(--line-top);
   left: var(--line-left);
   transform: rotate(var(--line-rotate));
   z-index: var(--line-zIndex);
 }
 
+.Gline.Gline__before-positive-direction {
+  transform-origin: bottom left;
+}
+
+.Gline.Gline__before-negative-direction {
+  transform-origin: center left;
+}
+
 .Gline {
   width: 0;
   opacity: 0;
-  animation: gline var(--line-animSpeed) ease-in-out forwards;
+  animation: gline var(--line-animSpeed) ease-in-out forwards ;
   animation-delay: calc(var(--line-animSpeed) * var(--line-key));
 }
 

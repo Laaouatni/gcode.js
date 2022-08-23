@@ -2,6 +2,7 @@ import GcodeAPI from "../../../GcodeAPI_main/GcodeAPI.js";
 import CssLineLength from "../other/Methods/CssLineLength/CssLineLength.js";
 import CssLineAngle from "../other/Methods/CssLineAngle/CssLineAngle.js";
 import CssFloatPopup from "../CssFloatPopup/CssFloatPopup.js";
+import StyleLine from "../other/Methods/StyleLine/StyleLine.js";
 export default class CssLine {
   constructor(_CurrentObj, _index, _this) {
     this.index = _index;
@@ -50,28 +51,17 @@ export default class CssLine {
     return remValue * 16;
   }
 
+  // this.previusObj.x > this.currentObj.x &&
+  // this.previusObj.y < this.currentObj.y
+  //   ? this.biggestPos.y
+  //   : this.smallestPos.y
+
+  // this.previusObj.x > this.currentObj.x &&
+  //       this.previusObj.y < this.currentObj.y
+  //         ? -1 * this.lineAngle
+  //         : this.lineAngle
   styleLine() {
-    this.lineStylesObj = {
-      width: `${this.lineLength}px`,
-      height: `${this.lineHeight}px`,
-      left: `${this.smallestPos.x}px`,
-      top: `${
-        this.previusObj.x > this.currentObj.x &&
-        this.previusObj.y < this.currentObj.y
-          ? this.biggestPos.y
-          : this.smallestPos.y
-      }px`,
-      rotate: `${
-        this.previusObj.x > this.currentObj.x &&
-        this.previusObj.y < this.currentObj.y
-          ? -1 * this.lineAngle
-          : this.lineAngle
-      }deg`,
-      backgroundColor: "var(--sky-200)",
-      zIndex: `${GcodeAPI.array.length - this.index}`,
-      key: `${this.index}`,
-      animSpeed: "100ms",
-    };
+    this.lineStylesObj = new StyleLine(this).getResult();
 
     this.stylesKeysArray = Object.keys(this.lineStylesObj);
     this.stylesValuesArray = Object.values(this.lineStylesObj);
