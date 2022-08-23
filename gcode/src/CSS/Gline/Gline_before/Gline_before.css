@@ -28,11 +28,15 @@
 .Gline::before {
   position: absolute;
   top: 50%;
+  right: 0;
+}
+
+.Gline::before {
+  --before-rotate-correction: calc(var(--line-rotate) * -1);
 }
 
 .Gline.Gline__before-positive-direction::before {
-  right: 0;
-  transform: translate(50%, -50%);
+  transform: translate(50%, -50%) rotate(var(--before-rotate-correction));
 }
 
 /* .Gline.Gline__before-negative-direction::before {
@@ -41,8 +45,7 @@
 } */
 
 .Gline.Gline__before-negative-direction::before {
-  right: 0;
-  transform: translate(50%, -50%);
+  transform: translate(50%, -50%) rotate(var(--before-rotate-correction));
 }
 
 .Gline::before {
