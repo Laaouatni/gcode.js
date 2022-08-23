@@ -29,18 +29,22 @@ export default class StyleLine {
   }
 
   calcolateLeft() {
+    // right
     if (this.obj.previusObj.x > this.obj.currentObj.x) {
       return this.obj.biggestPos.x;
     }
 
+    // left
     return this.obj.smallestPos.x;
   }
 
   calcolateTop() {
+    // bottom
     if (this.obj.previusObj.y > this.obj.currentObj.y) {
       return this.obj.biggestPos.y;
     }
 
+    // top
     return this.obj.smallestPos.y;
   }
 
