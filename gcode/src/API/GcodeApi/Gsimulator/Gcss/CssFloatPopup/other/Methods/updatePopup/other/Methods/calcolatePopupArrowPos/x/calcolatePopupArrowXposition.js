@@ -20,8 +20,6 @@ export default function calcolatePopupArrowXposition(_x, _this) {
       arrow: _this.arrowX,
     };
   } else if (_x <= _this.parentPosition.x) {
-    console.log("2", _this.arrowX, _this.parentPosition.x - _x, _this.padding);
-
     return {
       popup: _this.parentPosition.x + _this.padding,
       arrow: 0 + _this.padding,

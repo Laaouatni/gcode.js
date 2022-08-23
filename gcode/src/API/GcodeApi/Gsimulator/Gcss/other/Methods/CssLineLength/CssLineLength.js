@@ -5,7 +5,10 @@ export default class CssLineLength {
 
   calcolate() {
     this.setObjSameOrNot();
+    return this.getLenght();
+  }
 
+  getLenght() {
     if (
       this.obj.currentObj.y !== this.obj.previusObj.y &&
       this.obj.currentObj.x === this.obj.previusObj.x
@@ -29,6 +32,7 @@ export default class CssLineLength {
   }
 
   setObjSameOrNot() {
+    // moving in Y (top, bottom)
     if (
       this.obj.currentObj.y !== this.obj.previusObj.y &&
       this.obj.currentObj.x === this.obj.previusObj.x
@@ -36,21 +40,29 @@ export default class CssLineLength {
       this.obj.sameX = true;
       this.obj.sameY = false;
       this.obj.notSameXY = false;
-    } else if (
+    }
+    // moving in X (left, right)
+    else if (
       this.obj.currentObj.x !== this.obj.previusObj.x &&
       this.obj.currentObj.y === this.obj.previusObj.y
     ) {
       this.obj.sameY = true;
       this.obj.sameX = false;
       this.obj.notSameXY = false;
-    } else if (
+    }
+    // moving diagonally
+    else if (
       this.obj.currentObj.y !== this.obj.previusObj.y &&
       this.obj.currentObj.x !== this.obj.previusObj.x
     ) {
       this.obj.sameX = false;
       this.obj.sameY = false;
       this.obj.notSameXY = true;
-    } else {
+      // console.log({ cur: this.obj.currentObj, prev: this.obj.previusObj });
+    }
+    // not moving
+    else {
+      // 0 0
       this.obj.sameX = true;
       this.obj.sameY = true;
       this.obj.notSameXY = false;

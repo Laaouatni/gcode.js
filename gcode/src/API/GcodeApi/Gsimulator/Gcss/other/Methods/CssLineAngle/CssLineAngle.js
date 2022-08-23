@@ -5,6 +5,7 @@ export default class CssLineAngle {
 
   calcolate() {
     if (this.obj.notSameXY) {
+      // check if the user used "bottom"
       return Math.asin(this.obj.PosDifference.y / this.obj.lineLength) * 180 / Math.PI;
     } else if (this.obj.sameY && !this.obj.sameX) {
       return 0;
