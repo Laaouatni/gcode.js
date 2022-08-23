@@ -78,7 +78,7 @@ export default class StyleLine {
       this.obj.previusObj.x > this.obj.currentObj.x &&
       this.obj.currentObj.y > this.obj.previusObj.y
     ) {
-      return this.obj.lineAngle + 90;
+      return 180 - this.obj.lineAngle;
     }
 
     // left and bottom
@@ -86,7 +86,7 @@ export default class StyleLine {
       this.obj.currentObj.x > this.obj.previusObj.x &&
       this.obj.previusObj.y > this.obj.currentObj.y
     ) {
-      return this.obj.lineAngle - 90;
+      return -1 * this.obj.lineAngle;
     }
 
     // normal all other direction

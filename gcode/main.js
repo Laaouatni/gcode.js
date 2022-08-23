@@ -7,45 +7,45 @@ import Gcss from "./src/API/GcodeApi/Gsimulator/Gcss/Gcss.js";
 let a = new G0({});
 
 for (let i = 0; i < 3; i++) {
-  a.moveTo({left: 50, top: 50})
+  a.moveTo({ left: 10, top: 30 });
 }
 
 for (let i = 0; i < 3; i++) {
-  a.moveTo({ left: 50 })
+  a.moveTo({ left: 100 });
 }
 
 for (let i = 0; i < 3; i++) {
   a.moveTo({
-    bottom: 50
+    bottom: 50,
   });
 }
 
 for (let i = 0; i < 3; i++) {
   a.moveTo({
-    right: 50
+    right: 100,
   });
 }
 
 for (let i = 0; i < 3; i++) {
   a.moveTo({
-    bottom: 50, 
-    right: 50
+    bottom: 50,
+    right: 50,
   });
 }
 
 for (let i = 0; i < 3; i++) {
   a.moveTo({
-    top: 50, 
-    right: 50
+    top: 50,
+    right: 20,
   });
 }
 
 for (let i = 0; i < 4; i++) {
-  a.moveTo({ left: 50 })
+  a.moveTo({ left: 50 });
 }
 
 for (let i = 0; i < 3; i++) {
-  a.moveTo({ bottom: 50, left: 50 })
+  a.moveTo({ bottom: 30, left: 50 });
 }
 
 let g = new Gcss({
