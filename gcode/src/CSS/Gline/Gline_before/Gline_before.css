@@ -35,3 +35,8 @@
 .Gline::before {
   transition: transform 0.2s;
 }
+
+.Gline.Gline__before-negative-direction::before {
+  left: 0;
+  transform: translate(-50%, -50%);
+}

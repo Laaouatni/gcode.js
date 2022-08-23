@@ -79,6 +79,12 @@ export default class CssLine {
     });
 
     this.lineElement.classList.add("Gline");
+
+    this.previusObj.x > this.currentObj.x ||
+    this.previusObj.y > this.currentObj.y
+      ? this.lineElement.classList.add("Gline__before-negative-direction")
+      : this.lineElement.classList.add("Gline__before-positive-direction");
+
     this.lineElement.setAttribute("key", this.index);
     this.lineElement.setAttribute(
       "data-line",
