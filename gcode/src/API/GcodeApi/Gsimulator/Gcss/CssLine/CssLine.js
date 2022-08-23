@@ -74,10 +74,15 @@ export default class CssLine {
           : this.smallestPos.y
       }px`,
       rotate: `${
-        this.previusObj.y > this.currentObj.y
+        this.previusObj.y > this.currentObj.y &&
+        this.previusObj.x === this.currentObj.x
           ? -1 * this.lineAngle
-          : this.previusObj.x > this.currentObj.x
+          : this.previusObj.x > this.currentObj.x &&
+            this.previusObj.y === this.currentObj.y
           ? this.lineAngle + 180
+          : this.previusObj.y > this.currentObj.y &&
+            this.previusObj.x > this.currentObj.x
+          ? this.lineAngle - 180
           : this.lineAngle
       }deg`,
       backgroundColor: "var(--sky-200)",
