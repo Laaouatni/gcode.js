@@ -1,6 +1,5 @@
 export default function calcolatePopupArrowXposition(_x, _this) {
   if (_x > _this.parentPosition.x) {
-    console.log("1");
     if (
       _this.parentPosition.x + _this.parentElement.offsetWidth <
       _x + _this.popup.offsetWidth

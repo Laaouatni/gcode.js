@@ -18,32 +18,20 @@
 
 .Gline.Gline__before-positive-direction {
   transform-origin: bottom left;
-  width: 0;
-  opacity: 0;
-  animation: glinePos var(--line-animSpeed) ease-in-out forwards ;
-  animation-delay: calc(var(--line-animSpeed) * var(--line-key));
 }
 
 .Gline.Gline__before-negative-direction {
   transform-origin: center left;
+}
+
+.Gline {
   width: 0;
   opacity: 0;
-  animation: glineNeg var(--line-animSpeed) ease-in-out forwards ;
+  animation: gline var(--line-animSpeed) ease-in-out forwards ;
   animation-delay: calc(var(--line-animSpeed) * var(--line-key));
 }
 
-@keyframes glinePos {
-  0% {
-    opacity: 0;
-    width: 0;
-  }
-  100% {
-    width: var(--line-width);
-    opacity: 1;
-  }
-}
-
-@keyframes glineNeg {
+@keyframes gline {
   0% {
     opacity: 0;
     width: 0;

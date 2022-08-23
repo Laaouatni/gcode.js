@@ -58,7 +58,6 @@ export default class CssLineLength {
       this.obj.sameX = false;
       this.obj.sameY = false;
       this.obj.notSameXY = true;
-      // console.log({ cur: this.obj.currentObj, prev: this.obj.previusObj });
     }
     // not moving
     else {
