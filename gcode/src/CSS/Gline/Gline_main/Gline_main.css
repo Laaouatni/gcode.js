@@ -10,7 +10,6 @@
 }
 
 .Gline {
-  transform-origin: bottom left;
   top: var(--line-top);
   left: var(--line-left);
   transform: rotate(var(--line-rotate));
@@ -18,6 +17,7 @@
 }
 
 .Gline.Gline__before-positive-direction {
+  transform-origin: bottom left;
   width: 0;
   opacity: 0;
   animation: glinePos var(--line-animSpeed) ease-in-out forwards ;
@@ -25,6 +25,7 @@
 }
 
 .Gline.Gline__before-negative-direction {
+  transform-origin: center left;
   width: 0;
   opacity: 0;
   animation: glineNeg var(--line-animSpeed) ease-in-out forwards ;
