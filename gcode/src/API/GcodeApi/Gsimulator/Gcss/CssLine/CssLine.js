@@ -51,15 +51,6 @@ export default class CssLine {
     return remValue * 16;
   }
 
-  // this.previusObj.x > this.currentObj.x &&
-  // this.previusObj.y < this.currentObj.y
-  //   ? this.biggestPos.y
-  //   : this.smallestPos.y
-
-  // this.previusObj.x > this.currentObj.x &&
-  //       this.previusObj.y < this.currentObj.y
-  //         ? -1 * this.lineAngle
-  //         : this.lineAngle
   styleLine() {
     this.lineStylesObj = new StyleLine(this).getResult();
 
