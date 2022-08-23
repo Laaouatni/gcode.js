@@ -40,6 +40,14 @@ for (let i = 0; i < 3; i++) {
   });
 }
 
+for (let i = 0; i < 4; i++) {
+  a.moveTo({ left: 50 })
+}
+
+for (let i = 0; i < 3; i++) {
+  a.moveTo({ bottom: 50, left: 50 })
+}
+
 let g = new Gcss({
   width: 500,
   height: 500,

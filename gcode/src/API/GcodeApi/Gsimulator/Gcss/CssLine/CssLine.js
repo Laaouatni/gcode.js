@@ -86,6 +86,9 @@ export default class CssLine {
           : this.previusObj.x > this.currentObj.x &&
             this.currentObj.y > this.previusObj.y
           ? this.lineAngle + 90
+          : this.currentObj.x > this.previusObj.x &&
+            this.previusObj.y > this.currentObj.y
+          ? this.lineAngle - 90
           : this.lineAngle
       }deg`,
       backgroundColor: "var(--sky-200)",
