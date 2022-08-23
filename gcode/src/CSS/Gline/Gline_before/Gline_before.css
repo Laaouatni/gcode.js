@@ -28,15 +28,18 @@
 .Gline::before {
   position: absolute;
   top: 50%;
-  right: 0;
-  transform: translate(50%, -50%);
 }
 
-.Gline::before {
-  transition: transform 0.2s;
+.Gline.Gline__before-positive-direction::before {
+  right: 0;
+  transform: translate(50%, -50%);
 }
 
 .Gline.Gline__before-negative-direction::before {
   left: 0;
   transform: translate(-50%, -50%);
+}
+
+.Gline::before {
+  transition: transform 0.2s;
 }
