@@ -55,7 +55,12 @@ export default class CssLine {
       width: `${this.lineLength}px`,
       height: `${this.lineHeight}px`,
       left: `${this.smallestPos.x}px`,
-      top: `${this.smallestPos.y}px`,
+      top: `${
+        this.previusObj.x > this.currentObj.x &&
+        this.previusObj.y < this.currentObj.y
+          ? this.biggestPos.y
+          : this.smallestPos.y
+      }px`,
       rotate: `${
         this.previusObj.x > this.currentObj.x &&
         this.previusObj.y < this.currentObj.y
