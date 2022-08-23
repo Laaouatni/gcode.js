@@ -55,8 +55,18 @@ export default class CssLine {
       width: `${this.lineLength}px`,
       height: `${this.lineHeight}px`,
       left: `${this.smallestPos.x}px`,
-      top: `${this.smallestPos.y}px`,
-      rotate: `${this.lineAngle}deg`,
+      top: `${
+        this.previusObj.x > this.currentObj.x &&
+        this.previusObj.y < this.currentObj.y
+          ? this.biggestPos.y
+          : this.smallestPos.y
+      }px`,
+      rotate: `${
+        this.previusObj.x > this.currentObj.x &&
+        this.previusObj.y < this.currentObj.y
+          ? -1 * this.lineAngle
+          : this.lineAngle
+      }deg`,
       backgroundColor: "var(--sky-200)",
       zIndex: `${GcodeAPI.array.length - this.index}`,
       key: `${this.index}`,
@@ -74,6 +84,12 @@ export default class CssLine {
     });
 
     this.lineElement.classList.add("Gline");
+
+    this.previusObj.x > this.currentObj.x ||
+    this.previusObj.y > this.currentObj.y
+      ? this.lineElement.classList.add("Gline__before-negative-direction")
+      : this.lineElement.classList.add("Gline__before-positive-direction");
+
     this.lineElement.setAttribute("key", this.index);
     this.lineElement.setAttribute(
       "data-line",
@@ -81,8 +97,8 @@ export default class CssLine {
         length: this.lineLength.toFixed(2),
         x: this.currentObj.x.toFixed(2),
         y: this.currentObj.y.toFixed(2),
-        angle: this.lineAngle.toFixed(2)
-      })}`
+        angle: this.lineAngle.toFixed(2),
+      })}`,
     );
   }
 

@@ -6,8 +6,10 @@ export default class MoveTo {
   constructor(_this, _transformObj) {
     this.obj = _this;
 
+    this.transformObj = _transformObj;
+
     this.PositionChoosed = new PositionSpecificy(
-      _transformObj,
+      this.transformObj,
     ).getChoosedDirection();
 
     this.previusX = GcodeAPI.previusX ?? this.obj.x;
@@ -16,9 +18,9 @@ export default class MoveTo {
     this.toX = () => {
       switch (this.PositionChoosed.x) {
         case "left":
-          return this.previusX + new DirectionValues(_transformObj).left;
+          return this.previusX + new DirectionValues(this.transformObj).left;
         case "right":
-          return this.previusX - new DirectionValues(_transformObj).right;
+          return this.previusX - new DirectionValues(this.transformObj).right;
         default:
           return this.previusX;
       }
@@ -27,16 +29,16 @@ export default class MoveTo {
     this.toY = () => {
       switch (this.PositionChoosed.y) {
         case "bottom":
-          return this.previusY - new DirectionValues(_transformObj).bottom;
+          return this.previusY - new DirectionValues(this.transformObj).bottom;
         case "top":
-          return this.previusY + new DirectionValues(_transformObj).top;
+          return this.previusY + new DirectionValues(this.transformObj).top;
         default:
           return this.previusY;
       }
     };
 
-    this.toZ = _transformObj.zIndex
-      ? GcodeAPI.previusZ + _transformObj.zIndex
+    this.toZ = this.transformObj.zIndex
+      ? GcodeAPI.previusZ + this.transformObj.zIndex
       : this.obj.z;
   }
 
@@ -45,6 +47,7 @@ export default class MoveTo {
       x: this.toX(),
       y: this.toY(),
       z: this.toZ,
+      positionChoosed: this.PositionChoosed
     };
   }
 }

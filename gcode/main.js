@@ -6,10 +6,39 @@ import Gcss from "./src/API/GcodeApi/Gsimulator/Gcss/Gcss.js";
 
 let a = new G0({});
 
-for (let i = 0; i < 9; i++) {
-  a.moveTo({ left: 50, top: 10*i});
+for (let i = 0; i < 3; i++) {
+  a.moveTo({left: 50, top: 50})
 }
 
+for (let i = 0; i < 3; i++) {
+  a.moveTo({ left: 50 })
+}
+
+for (let i = 0; i < 3; i++) {
+  a.moveTo({
+    bottom: 50
+  });
+}
+
+for (let i = 0; i < 3; i++) {
+  a.moveTo({
+    right: 50
+  });
+}
+
+for (let i = 0; i < 3; i++) {
+  a.moveTo({
+    bottom: 50, 
+    right: 50
+  });
+}
+
+for (let i = 0; i < 3; i++) {
+  a.moveTo({
+    top: 50, 
+    right: 50
+  });
+}
 
 let g = new Gcss({
   width: 500,
@@ -19,13 +48,9 @@ let g = new Gcss({
 
 g.generate();
 
-
 const t1 = performance.now();
 console.log(`Call to doSomething took ${t1 - t0} milliseconds.`);
-console.table(GcodeAPI.array);
-
-
-
+// console.table(GcodeAPI.array);
 
 // let btn = document.querySelector("#btn")
 
