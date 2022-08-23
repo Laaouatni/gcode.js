@@ -54,9 +54,21 @@ export default class CssLine {
     this.lineStylesObj = {
       width: `${this.lineLength}px`,
       height: `${this.lineHeight}px`,
-      left: `${this.smallestPos.x}px`,
-      top: `${this.smallestPos.y}px`,
-      rotate: `${this.lineAngle}deg`,
+      left: `${
+        this.currentObj.x >= this.previusObj.x
+          ? this.smallestPos.x
+          : this.biggestPos.x
+      }px`,
+      top: `${
+        this.currentObj.y >= this.previusObj.y
+          ? this.smallestPos.y
+          : this.biggestPos.y
+      }px`,
+      rotate: `${
+        this.currentObj.x >= this.previusObj.x
+          ? this.lineAngle
+          : -1 * this.lineAngle
+      }deg`,
       backgroundColor: "var(--sky-200)",
       zIndex: `${GcodeAPI.array.length - this.index}`,
       key: `${this.index}`,
@@ -81,8 +93,8 @@ export default class CssLine {
         length: this.lineLength.toFixed(2),
         x: this.currentObj.x.toFixed(2),
         y: this.currentObj.y.toFixed(2),
-        angle: this.lineAngle.toFixed(2)
-      })}`
+        angle: this.lineAngle.toFixed(2),
+      })}`,
     );
   }
 
