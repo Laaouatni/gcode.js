@@ -50,20 +50,27 @@ export default class CssLine {
     return remValue * 16;
   }
 
+  // this.previusObj.x > this.currentObj.x &&
+  // this.previusObj.y < this.currentObj.y
+  //   ? this.biggestPos.y
+  //   : this.smallestPos.y
+
+  // this.previusObj.x > this.currentObj.x &&
+  //       this.previusObj.y < this.currentObj.y
+  //         ? -1 * this.lineAngle
+  //         : this.lineAngle
   styleLine() {
     this.lineStylesObj = {
       width: `${this.lineLength}px`,
       height: `${this.lineHeight}px`,
-      left: `${this.smallestPos.x}px`,
+      left: `${this.previusObj.x > this.currentObj.x ? this.biggestPos.x :this.smallestPos.x}px`,
       top: `${
-        this.previusObj.x > this.currentObj.x &&
-        this.previusObj.y < this.currentObj.y
+        this.previusObj.y > this.currentObj.y
           ? this.biggestPos.y
           : this.smallestPos.y
       }px`,
       rotate: `${
-        this.previusObj.x > this.currentObj.x &&
-        this.previusObj.y < this.currentObj.y
+        this.previusObj.y > this.currentObj.y 
           ? -1 * this.lineAngle
           : this.lineAngle
       }deg`,

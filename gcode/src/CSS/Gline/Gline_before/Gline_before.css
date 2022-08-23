@@ -35,9 +35,14 @@
   transform: translate(50%, -50%);
 }
 
-.Gline.Gline__before-negative-direction::before {
+/* .Gline.Gline__before-negative-direction::before {
   left: 0;
   transform: translate(-50%, -50%);
+} */
+
+.Gline.Gline__before-negative-direction::before {
+  right: 0;
+  transform: translate(50%, -50%);
 }
 
 .Gline::before {
