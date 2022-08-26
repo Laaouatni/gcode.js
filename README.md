@@ -4,7 +4,7 @@ basically a gcode library for making the creation of gcode programs easily and e
 
 ```javascript
 // example
-const G0 = new G0({});
+const G0 = new G0({x:0, y:0});
 
 for(let i=0; i < 10; i++) {
    G0.moveTo({ 
