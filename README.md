@@ -2,6 +2,8 @@
 
 basically a gcode library for making the creation of gcode programs easily and efficiently for CNC machines.
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/5386d634-4dab-4075-b703-88f25d4345f9/deploy-status)](https://app.netlify.com/sites/gcodejs/deploys)
+
 ```javascript
 // example
 const G0 = new G0({});
