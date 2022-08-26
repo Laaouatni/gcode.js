@@ -1,7 +1,7 @@
 const t0 = performance.now();
-import GcodeAPI from "./src/API/GcodeApi/GcodeAPI_main/GcodeAPI";
+import GcodeAPI from "./src/API/GcodeApi/GcodeAPI_main/GcodeAPI.js";
 
-import G0 from "./src/API/GcodeApi/Gcommands/G/G0";
+import G0 from "./src/API/GcodeApi/Gcommands/G/G0.js";
 import Gcss from "./src/API/GcodeApi/Gsimulator/Gcss/Gcss.js";
 
 let a = new G0({x: 250, y: 250});
