@@ -1,5 +1,7 @@
+import css from "./style.css"
+// import GcodeAPI from "./src/API/GcodeApi/GcodeAPI_main/GcodeAPI.js";
+
 const t0 = performance.now();
-import GcodeAPI from "./src/API/GcodeApi/GcodeAPI_main/GcodeAPI.js";
 
 import G0 from "./src/API/GcodeApi/Gcommands/G/G0.js";
 import Gcss from "./src/API/GcodeApi/Gsimulator/Gcss/Gcss.js";

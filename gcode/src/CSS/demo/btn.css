@@ -1,6 +1,6 @@
 #btn {
   font-size: 5vw;
-  font-family: poppins;
+  font-family: poppins, system-ui;
   padding: 2vw 4vw;
   background-color: var(--sky-50);
   border: none;
@@ -10,8 +10,7 @@
 }
 
 #btn:not(:disabled):hover {
-  box-shadow: inset 0 1vw 6vw var(--sky-200),
-    0 1vw 5vw rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 1vw 6vw var(--sky-200), 0 1vw 5vw rgba(0, 0, 0, 0.2);
   transform: scale(1.5) rotate(5deg);
 }
 
