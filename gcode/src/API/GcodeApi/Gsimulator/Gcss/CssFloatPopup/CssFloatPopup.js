@@ -1,5 +1,6 @@
 import UpdatePopup from "./other/Methods/updatePopup/updatePopup.js";
 import getPopupSpanHtml from "./other/Methods/getPopupSpanHtml/getPopupSpanHtml.js";
+import FluatingCSSfile from "../../../../../CSS/FloatingUI/FloatingUI.css"
 export default class CssFloatPopup {
   static popup;
   static span;

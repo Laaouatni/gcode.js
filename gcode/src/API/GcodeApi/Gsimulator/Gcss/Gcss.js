@@ -2,6 +2,7 @@ import Gsimulator from "../Gsimulator.js";
 import GcodeAPI from "../../GcodeAPI_main/GcodeAPI.js";
 import CssLine from "./CssLine/CssLine.js";
 import CssFloatPopup from "./CssFloatPopup/CssFloatPopup.js";
+import GcssCSSfile from "../../../../CSS/Gcss/Gcss.css"
 
 export default class Gcss extends Gsimulator {
   constructor(_GcssObj) {

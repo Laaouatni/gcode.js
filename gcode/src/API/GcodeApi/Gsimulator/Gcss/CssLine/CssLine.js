@@ -3,6 +3,7 @@ import CssLineLength from "../other/Methods/CssLineLength/CssLineLength.js";
 import CssLineAngle from "../other/Methods/CssLineAngle/CssLineAngle.js";
 import CssFloatPopup from "../CssFloatPopup/CssFloatPopup.js";
 import StyleLine from "../other/Methods/StyleLine/StyleLine.js";
+import LineCssFile from "../../../../../CSS/Gline/Gline.css";
 export default class CssLine {
   constructor(_CurrentObj, _index, _this) {
     this.index = _index;
