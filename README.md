@@ -1,5 +1,9 @@
 # gcode.js
 
+> ⚠️ this is the old version, now we are rewriting/refactoring this library, so we can use `svelte.js` framework
+> 
+> https://github.com/gcodeJS/Gcode.js/
+
 basically a gcode library for making the creation of gcode programs easily and efficiently for CNC machines.
 
 ```javascript
